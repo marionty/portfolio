@@ -110,13 +110,14 @@ export default function Skills() {
 
   return (
     <article>
-      <div className="wrapper-pages">
+      
+        <ScrollIndicator />
+        <section className="skills">
+        <div className="wrapper-pages">
         {/* éléments pour le fond ici */}
         <div className="object3"></div>
         <div className="object4"></div>
-         <div className="object5"></div>
-        <ScrollIndicator />
-        <section className="skills">
+         <div className="object5"></div></div>
           <h3>Skills</h3>
           <div className="flex-col">
             {/* Parcours du tableau de compétences */}
@@ -196,7 +197,7 @@ export default function Skills() {
           </div>
           </div>
         </section>
-      </div>
+      
     </article>
   );
 }

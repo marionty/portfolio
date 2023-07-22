@@ -62,25 +62,25 @@ export default function Home() {
             </div>
           </div>
           <div className="cols cols1">
-            <div className="imgbox">
+            
               <img src="images/avatartete.png" alt="avatar de profil" />
             </div>
           </div>
-        </div>
+        
       </section>
 
-      <section className="aboutsection">
-        <div className="container">
-          <div className="abouthero">
+      <section className="about-section">
+        
+          <div className="about-hero">
             <h3>About me</h3>
           </div>
 
           <div className="infoabout">
-            <div>
+           
               <Rocket />
-            </div>
-            <div className="infoabout__content">
-              <div className="infoabout__title">
+           
+            
+              <div className="infoabout__content">
                 {showFullText ? (
                   <>
                     <span className="infoabout__short-text">
@@ -146,13 +146,15 @@ export default function Home() {
                     <br />
                   </span>
                 )}
-              </div>
+           
+             
               <button className="infoabout__button" onClick={handleButtonClick}>
                 {showFullText ? "Réduire" : "Lire la suite"}
               </button>
+              </div>
             </div>
-          </div>
-        </div>
+         
+       
       </section>
     </article>
   );

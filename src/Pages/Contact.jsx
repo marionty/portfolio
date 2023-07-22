@@ -16,6 +16,7 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [inputFocus, setInputFocus] = useState(false);
 
   // État pour indiquer si le message a été envoyé avec succès
   const [isMessageSent, setIsMessageSent] = useState(false);
@@ -84,12 +85,13 @@ const Contact = () => {
     
   
     <article>
-      <div className="wrapper-pages">
+      
+        <section className="container-contact">
+        <div className="wrapper-pages">
         <div className="object3"></div>
         <div className="object4"></div>
         <div className="object5"></div>
         </div>
-        <div className="container-contact">
           <h3>Send me a message</h3>
           <p>
             Do not hesitate to contact me via the contact form below or my
@@ -112,7 +114,7 @@ const Contact = () => {
             &nbsp;
             <strong>marion.tytgat@gmail.com</strong>
           </div>
-        </div>
+        </section>
      
 
       <div className="container-contact-form">
@@ -126,6 +128,9 @@ const Contact = () => {
               value={formData.firstname}
               onChange={handleInputChange}
               required
+              onFocus={() => setInputFocus(true)} // Ajoutez la classe lorsque l'input obtient le focus
+              onBlur={() => setInputFocus(false)} // Supprimez la classe lorsque l'input perd le focus
+              className={inputFocus ? "input-with-focus" : ""} // Appliquez la classe conditionnellement
             />
 
             <label htmlFor="lastname">Lastname</label>
@@ -136,6 +141,9 @@ const Contact = () => {
               value={formData.lastname}
               onChange={handleInputChange}
               required
+              onFocus={() => setInputFocus(true)} // Ajoutez la classe lorsque l'input obtient le focus
+              onBlur={() => setInputFocus(false)} // Supprimez la classe lorsque l'input perd le focus
+              className={inputFocus ? "input-with-focus" : ""} // Appliquez la classe conditionnellement
             />
           </div>
           <div className="form-group">
@@ -147,6 +155,9 @@ const Contact = () => {
               value={formData.email}
               onChange={handleInputChange}
               required
+              onFocus={() => setInputFocus(true)} // Ajoutez la classe lorsque l'input obtient le focus
+              onBlur={() => setInputFocus(false)} // Supprimez la classe lorsque l'input perd le focus
+              className={inputFocus ? "input-with-focus" : ""} // Appliquez la classe conditionnellement
             />
           </div>
           <div className="form-group">
@@ -157,6 +168,9 @@ const Contact = () => {
               value={formData.message}
               onChange={handleInputChange}
               required
+              onFocus={() => setInputFocus(true)} // Ajoutez la classe lorsque l'input obtient le focus
+              onBlur={() => setInputFocus(false)} // Supprimez la classe lorsque l'input perd le focus
+              className={inputFocus ? "input-with-focus" : ""} // Appliquez la classe conditionnellement
             />
           </div>
           {isMessageSent && (

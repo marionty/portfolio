@@ -51,12 +51,12 @@ const Projects = () => {
 
   const responsive = {
     desktop: {
-      breakpoint: { max: 3000, min: 1024 },
+      breakpoint: { max: 3000, min: 1116 },
       items: 2,
       slidesToSlide: 2 // optional, default to 1.
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1116, min: 464 },
       items: 1,
       slidesToSlide: 1 // optional, default to 1.
     },
@@ -73,10 +73,13 @@ const Projects = () => {
 
   return (
     <article>
+       
       <ScrollIndicator />
       <section className="my-projects">
-        <div className="wrapper-pages">
-          {/* Ajoutez vos éléments pour le fond ici */}
+      <div className="wrapper-pages">
+        <div className="object3"></div>
+        <div className="object4"></div>
+         <div className="object5"></div></div>
           <h3>My projects</h3>
           <div className="input-projects">
             <input
@@ -111,7 +114,7 @@ const Projects = () => {
               ))}
             </Carousel>
           </div>
-        </div>
+        
       </section>
     </article>
   );

@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import { useSpring, animated } from 'react-spring';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay } from "@fortawesome/free-solid-svg-icons";
 
 const Rocket = () => {
   // État pour suivre si la fusée a été lancée ou non
@@ -29,16 +27,17 @@ const Rocket = () => {
       <div id="rocket_dummy">
         {/* Corps de la fusée avec animation */}
         <animated.div className={`rocket_body${rocketStarted ? ' started' : ''}`} style={rocketStarted ? rocketAnimation : {}}></animated.div>
-      </div>
-
+        </div>
+      
       {/* Bouton de lancement de la fusée */}
       <button className={`rocket-button${buttonActive ? ' active' : ''}`}
         onClick={startRocket}
         onMouseUp={() => setButtonActive(false)}
       >
-        <FontAwesomeIcon icon={faPlay} />
+       <img src="../../images/start-button.png" alt="Bouton de lancement" />
       </button>
-    </div>
+      </div>
+  
   );
 };
 
