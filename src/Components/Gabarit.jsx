@@ -17,6 +17,7 @@ export default function Gabarit({ children }) {
       {/* Condition de chargement */}
       {loading ? (
         <div className="container-character">
+            
           <div className="Character">
             {/* Image de l'ombre du personnage */}
             <img

@@ -113,11 +113,6 @@ export default function Skills() {
       
         <ScrollIndicator />
         <section className="skills">
-        <div className="wrapper-pages">
-        {/* éléments pour le fond ici */}
-        <div className="object3"></div>
-        <div className="object4"></div>
-         <div className="object5"></div></div>
           <h3>Skills</h3>
           <div className="flex-col">
             {/* Parcours du tableau de compétences */}

@@ -3,17 +3,24 @@
 * preloader
 * ----------------------------------------------------------------------------------------
 */
-
 .container-character {
-  background-color: #bfadd9;
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
+
+
 .Character {
+  border-radius: 50%;
+  background-color: #bfadd9;
   --pixel-size: 16;
   width: calc(32px * var(--pixel-size));
   height: calc(32px * var(--pixel-size));
   overflow: hidden;
   position: relative;
-  margin: 4em auto;
+  
 }
 
 .Character_spritesheet {
@@ -444,14 +451,13 @@ button.rocket-button img {
 */
 
 .skills {
-  margin-top: 5rem;
+  margin-top: 8rem;
 }
 
 .skills h3,
 .Soft-Skills h3 {
   color: #7f00ff;
   text-align: center;
-  font-family: "oswald", sans-serif;
   letter-spacing: 2px;
   font-size: 3.7rem;
   font-weight: 900;
@@ -960,6 +966,22 @@ footer {
   animation: object5 6s linear infinite;
   overflow: hidden;
 }
+.wrapper-pages .object6 {
+  content: "";
+  position: absolute;
+  height: 25rem;
+  width: 25rem;
+  border-radius: 50%;
+  left: 62%;
+  top: 90%;
+  background: linear-gradient(
+    45deg,
+    rgba(127, 0, 255, 0.2),
+    rgba(255, 192, 203, 0.2)
+  );
+  animation: object6 6s linear infinite;
+  overflow: hidden;
+}
 @keyframes object3 {
   50% {
     left: -13%;
@@ -978,9 +1000,22 @@ footer {
     top: 92%;
   }
 }
+@keyframes object6 {
+  50% {
+    left: 64%;
+    top: 92%;
+  }
+}
 
-/*HEADER*/
 @media screen and (max-width: 768px) {
+  .Character {
+    --pixel-size: 11; /* Ajustez cette valeur pour réduire la taille du personnage */
+   
+  }
+
+  
+
+  /*header*/
   .Navigation {
     display: none;
   }
@@ -995,14 +1030,20 @@ footer {
     right: 0;
     cursor: pointer;
   }
+  
   .navItems {
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 80px;
     right: 0;
-    background-color: #fff;
+    background-color: black;
     border-top: 2px solid #bfadd9;
+    
+  }
+  .navItems li a{
+    color: #fff;
+    margin-right: 1rem;
   }
   .links {
     display: flex;
@@ -1073,7 +1114,7 @@ footer {
     font-size: 2.5rem;
   }
   .cols1 {
-    height: 20rem;
+    height:25rem;
     width: 100%;
     margin-left: 0;
     text-align: center;
@@ -1142,7 +1183,7 @@ footer {
   .input-projects input {
     width: 86%;
   }
-  /* about me*/
+  
   /*skills*/
 
   .skills h3,
@@ -1229,19 +1270,19 @@ footer {
   .form-group textarea {
     margin: auto;
   }
-}
 
 
+/*wrapper-pages*/
 .wrapper-pages .object3 {
-  height: 15rem;
-  width: 15rem;
+  height: 13rem;
+  width: 13rem;
   left: 9%;
-  top: 50%;
+  top: 55%;
 }
 @keyframes object3 {
   50% {
     left: 5%;
-    top: 52%;
+    top: 57%;
   }
 }
 .wrapper-pages .object4 {
@@ -1257,19 +1298,42 @@ footer {
   }
 }
 .wrapper-pages .object5 {
-  height: 25rem;
-  width: 25rem;
-  border-radius: 50%;
-  left: 62%;
-  top: 90%;
+  height: 20rem;
+  width: 20rem;
+  left: 22%;
+  top: 80%;
 }
 @keyframes object5 {
   50% {
-    left: 64%;
-    top: 92%;
+    left: 20%;
+    top: 76%;
   }
 }
-@media screen and (min-width: 768px) and (max-width: 2000px) {
+
+.wrapper-pages .object6 {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    rgba(127, 0, 255, 0.2),
+    rgba(255, 192, 203, 0.2)
+  );
+  animation: object6 6s linear infinite;
+  overflow: hidden;
+  height: 20rem;
+  width: 20rem;
+  left: 22%;
+  top: 120%;
+}
+@keyframes object6 {
+  50% {
+    left: 20%;
+    top: 118%;
+  }
+}
+}
+@media screen and (min-width: 768px) and (max-width: 1800px) {
   .wrapper-pages .object5 {
     left: 49%;
     top: 65%;

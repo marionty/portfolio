@@ -90,7 +90,7 @@ const Contact = () => {
         <div className="wrapper-pages">
         <div className="object3"></div>
         <div className="object4"></div>
-        <div className="object5"></div>
+        <div className="object6"></div>
         </div>
           <h3>Send me a message</h3>
           <p>
