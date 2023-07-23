@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Skills from "./Pages/Skill";
 import Portfolio from "./Pages/Portfolio";
 import Contact from "./Pages/Contact";
-import Gabarit from "./Components/Gabarit";
+import NavTemplate from "./Components/NavTemplate";
 import "./App.css";
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
     <main>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Gabarit />}>
-            {/* Route principale pour le Gabarit */}
+          <Route path="/" element={<NavTemplate />}>
+            {/* Route principale pour le NavTemplate */}
             <Route exact path="/" element={<Home />} />
             {/* Route pour la page d'accueil */}
             <Route exact path="/Skills" element={<Skills />} />
