@@ -17,11 +17,16 @@ import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 
 export default function Skills() {
+  // État pour stocker les compétences
   const [skills, setSkills] = useState([]); // Tableau de compétences
-  const [zoomedIndex, setZoomedIndex] = useState(-1); // Index de la compétence zoomée (-1 par défaut)
 
+  // État pour stocker l'index de la compétence zoomée (-1 par défaut)
+  const [zoomedIndex, setZoomedIndex] = useState(-1);
+
+  // Utilisation de useEffect pour initialiser les compétences au chargement de la page
   useEffect(() => {
     setSkills([
+      // Exemple de données de compétences
       {
         icon: faHtml5,
         title: "HTML",
@@ -100,6 +105,7 @@ export default function Skills() {
     ]);
   }, []);
 
+  // Gestionnaire pour gérer le zoom d'une compétence
   const handleZoomClick = (index) => {
     if (index === zoomedIndex) {
       setZoomedIndex(-1); // Dézoomer si la même compétence est cliquée à nouveau
@@ -110,50 +116,49 @@ export default function Skills() {
 
   return (
     <article>
-      
-        <ScrollIndicator />
-        <section className="skills">
-          <h3>Skills</h3>
-          <div className="flex-col">
-            {/* Parcours du tableau de compétences */}
-            {skills.map((skill, index) => (
-              <div
-                className={`Skill${index === zoomedIndex ? " zoomed" : ""}`}
-                key={skill.title}
-                onClick={() => handleZoomClick(index)}
-              >
-                {/* Contenu de la compétence */}
-                <div className="Skill-content">
-                  <FontAwesomeIcon icon={skill.icon} className="icon" />
-                  <h4>{skill.title}</h4>
-                  <h5>{skill.type}</h5>
-                  <p>{skill.description}</p>
-                  {/* Afficher le bouton de zoom si la compétence n'est pas zoomée */}
-                  {index !== zoomedIndex && (
-                    <button
-                      className="zoom-button"
-                      onClick={() => handleZoomClick(index)}
-                    >
-                      Zoom
-                    </button>
-                  )}
-                </div>
-                {/* Afficher le bouton de fermeture si la compétence est zoomée */}
-                {index === zoomedIndex && (
-                  <div
-                    className="close-button"
-                    onClick={() => handleZoomClick(-1)}
+      <ScrollIndicator />
+      <section className="skills">
+        <h3>Skills</h3>
+        <div className="flex-col">
+          {/* Parcours du tableau de compétences */}
+          {skills.map((skill, index) => (
+            <div
+              className={`Skill${index === zoomedIndex ? " zoomed" : ""}`}
+              key={skill.title}
+              onClick={() => handleZoomClick(index)}
+            >
+              {/* Contenu de la compétence */}
+              <div className="Skill-content">
+                <FontAwesomeIcon icon={skill.icon} className="icon" />
+                <h4>{skill.title}</h4>
+                <h5>{skill.type}</h5>
+                <p>{skill.description}</p>
+                {/* Afficher le bouton de zoom si la compétence n'est pas zoomée */}
+                {index !== zoomedIndex && (
+                  <button
+                    className="zoom-button"
+                    onClick={() => handleZoomClick(index)}
                   >
-                    X
-                  </div>
+                    Zoom
+                  </button>
                 )}
               </div>
-            ))}
-          </div>
-        </section>
-        <section className="Soft-Skills">
-          <h3>Soft Skills</h3>
-          <div className="soft-skills-grid">
+              {/* Afficher le bouton de fermeture si la compétence est zoomée */}
+              {index === zoomedIndex && (
+                <div
+                  className="close-button"
+                  onClick={() => handleZoomClick(-1)}
+                >
+                  X
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="Soft-Skills">
+        <h3>Soft Skills</h3>
+        <div className="soft-skills-grid">
           <div className="soft-skill">
             <div
               className="soft-skill-icon"
@@ -190,9 +195,8 @@ export default function Skills() {
           <div className="soft-skill">
             <div className="soft-skill-icon" data-content="Curious"></div>
           </div>
-          </div>
-        </section>
-      
+        </div>
+      </section>
     </article>
   );
 }

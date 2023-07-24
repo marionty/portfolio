@@ -5,10 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import Confetti from "react-dom-confetti";
-
-
 import "../Styles/Styles.css";
-
 
 const Contact = () => {
   // État pour stocker les valeurs des champs de formulaire
@@ -18,16 +15,20 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
+  // État pour indiquer si un champ de formulaire a le focus
   const [inputFocus, setInputFocus] = useState(false);
 
   // État pour indiquer si le message a été envoyé avec succès
   const [isMessageSent, setIsMessageSent] = useState(false);
+
 
   // État pour afficher ou masquer les confettis
   const [showConfetti, setShowConfetti] = useState(false);
 
   // Gestionnaire de changement de champ de formulaire
   const handleInputChange = (e) => {
+    // Mise à jour des données du formulaire en copiant l'état actuel et en modifiant uniquement le champ spécifié
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -38,6 +39,7 @@ const Contact = () => {
     // Validation des champs de formulaire avant l'envoi
     const emailPattern = /^[\w-]+(.[\w-]+)*@([\w-]+.)+[a-zA-Z]{2,7}$/;
     if (!emailPattern.test(formData.email)) {
+      // Vérification de la validité de l'e-mail
       alert("Email non valide");
       return;
     }
@@ -59,12 +61,16 @@ const Contact = () => {
         .send(serviceID, templateID, formData, userID)
         .then((response) => {
           console.log("E-mail envoyé !", response.status, response.text);
+          // Mise à jour de l'état pour indiquer que le message a été envoyé avec succès
           setIsMessageSent(true);
+          // Réinitialisation des valeurs du formulaire après l'envoi
           setFormData({ firstname: "", lastname: "", email: "", message: "" });
+          // Affichage des confettis pour célébrer l'envoi réussi du message
           setShowConfetti(true);
         })
         .catch((error) => {
           console.error("Erreur lors de l'envoi de l'e-mail :", error);
+          // Affichage d'une alerte en cas d'erreur lors de l'envoi du message
           alert(
             "Une erreur s'est produite lors de l'envoi du message. Merci de réessayer."
           );
@@ -76,6 +82,7 @@ const Contact = () => {
   useEffect(() => {
     if (showConfetti) {
       const timer = setTimeout(() => {
+        // Masquage des confettis après 5 secondes
         setShowConfetti(false);
       }, 5000);
 
@@ -84,40 +91,33 @@ const Contact = () => {
   }, [showConfetti]);
 
   return (
-    
-  
     <article>
-      
-        <section className="container-contact">
+      <section className="container-contact">
         <div className="wrapper-pages">
-        <div className="object3"></div>
-        <div className="object4"></div>
-        <div className="object6"></div>
+          <div className="object3"></div>
+          <div className="object4"></div>
+          <div className="object6"></div>
         </div>
-          <h3>Send me a message</h3>
-          <p>
-            Do not hesitate to contact me via the contact form below or my
-            e-mail address. I would love to chat with you and share this common
-            passion for development.
-          </p>
-          <div className="links-contact">
-            <Link
-              to="https://www.linkedin.com/in/tytgatmarion/"
-              target="_blank"
-            >
-              <FontAwesomeIcon icon={faLinkedin} />
-            </Link>
-            <Link to="https://github.com/marionty" target="_blank">
-              <FontAwesomeIcon icon={faGithub} />
-            </Link>
-          </div>
-          <div className="mymail">
-            <FontAwesomeIcon icon={faEnvelope} />
-            &nbsp;
-            <strong>marion.tytgat@gmail.com</strong>
-          </div>
-        </section>
-     
+        <h3>Send me a message</h3>
+        <p>
+          Do not hesitate to contact me via the contact form below or my e-mail
+          address. I would love to chat with you and share this common passion
+          for development.
+        </p>
+        <div className="links-contact">
+          <Link to="https://www.linkedin.com/in/tytgatmarion/" target="_blank">
+            <FontAwesomeIcon icon={faLinkedin} />
+          </Link>
+          <Link to="https://github.com/marionty" target="_blank">
+            <FontAwesomeIcon icon={faGithub} />
+          </Link>
+        </div>
+        <div className="mymail">
+          <FontAwesomeIcon icon={faEnvelope} />
+          &nbsp;
+          <strong>marion.tytgat@gmail.com</strong>
+        </div>
+      </section>
 
       <div className="container-contact-form">
         <form className="contact-form" onSubmit={handleSubmit}>
@@ -197,11 +197,10 @@ const Contact = () => {
             >
               Envoyer
             </button>
-         </div>
+          </div>
         </form>
-        </div>
+      </div>
     </article>
-   
   );
 };
 

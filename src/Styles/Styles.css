@@ -4,13 +4,11 @@
 * ----------------------------------------------------------------------------------------
 */
 .container-character {
- 
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
-
 
 .Character {
   border-radius: 50%;
@@ -20,7 +18,6 @@
   height: calc(32px * var(--pixel-size));
   overflow: hidden;
   position: relative;
-  
 }
 
 .Character_spritesheet {
@@ -822,7 +819,7 @@ article {
   margin-bottom: 3rem;
 }
 .confirm-message p {
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
   color: #bfadd9;
 }
@@ -1010,10 +1007,7 @@ footer {
 @media screen and (max-width: 768px) {
   .Character {
     --pixel-size: 11; /* Ajustez cette valeur pour réduire la taille du personnage */
-   
   }
-
-  
 
   /*header*/
   .Navigation {
@@ -1030,7 +1024,7 @@ footer {
     right: 0;
     cursor: pointer;
   }
-  
+
   .navItems {
     display: flex;
     flex-direction: column;
@@ -1039,9 +1033,8 @@ footer {
     right: 0;
     background-color: black;
     border-top: 2px solid #bfadd9;
-    
   }
-  .navItems li a{
+  .navItems li a {
     color: #fff;
     margin-right: 1rem;
   }
@@ -1114,7 +1107,7 @@ footer {
     font-size: 2.5rem;
   }
   .cols1 {
-    height:25rem;
+    height: 25rem;
     width: 100%;
     margin-left: 0;
     text-align: center;
@@ -1122,7 +1115,7 @@ footer {
   .cols img {
     width: 50%;
     top: 6rem; /* Ajuster cette valeur pour modifier le déplacement de l'image vers le haut */
-    left:4rem;
+    left: 4rem;
     transform: translateY(-10%) rotateY(180deg);
   }
 
@@ -1136,8 +1129,7 @@ footer {
     left: 0.5rem;
   }
   .about-section {
-    margin:0rem;
-    
+    margin: 0rem;
   }
   .infoabout {
     flex-direction: column;
@@ -1170,7 +1162,6 @@ footer {
   button.rocket-button img {
     margin-top: -2.4rem;
   }
-  
 
   /*portfolio/my project*/
   .project-item img {
@@ -1183,7 +1174,7 @@ footer {
   .input-projects input {
     width: 86%;
   }
-  
+
   /*skills*/
 
   .skills h3,
@@ -1270,68 +1261,69 @@ footer {
   .form-group textarea {
     margin: auto;
   }
+  .confirm-message p {
+    font-size: 2rem;
+  }
+  /*wrapper-pages*/
+  .wrapper-pages .object3 {
+    height: 13rem;
+    width: 13rem;
+    left: 9%;
+    top: 55%;
+  }
+  @keyframes object3 {
+    50% {
+      left: 5%;
+      top: 57%;
+    }
+  }
+  .wrapper-pages .object4 {
+    height: 5rem;
+    width: 5rem;
+    left: 70%;
+    top: 8%;
+  }
+  @keyframes object4 {
+    50% {
+      left: 68%;
+      top: 10%;
+    }
+  }
+  .wrapper-pages .object5 {
+    height: 20rem;
+    width: 20rem;
+    left: 22%;
+    top: 80%;
+  }
+  @keyframes object5 {
+    50% {
+      left: 20%;
+      top: 76%;
+    }
+  }
 
-
-/*wrapper-pages*/
-.wrapper-pages .object3 {
-  height: 13rem;
-  width: 13rem;
-  left: 9%;
-  top: 55%;
-}
-@keyframes object3 {
-  50% {
-    left: 5%;
-    top: 57%;
+  .wrapper-pages .object6 {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(
+      45deg,
+      rgba(127, 0, 255, 0.2),
+      rgba(255, 192, 203, 0.2)
+    );
+    animation: object6 6s linear infinite;
+    overflow: hidden;
+    height: 20rem;
+    width: 20rem;
+    left: 22%;
+    top: 120%;
   }
-}
-.wrapper-pages .object4 {
-  height: 5rem;
-  width: 5rem;
-  left: 70%;
-  top: 8%;
-}
-@keyframes object4 {
-  50% {
-    left: 68%;
-    top: 10%;
+  @keyframes object6 {
+    50% {
+      left: 20%;
+      top: 118%;
+    }
   }
-}
-.wrapper-pages .object5 {
-  height: 20rem;
-  width: 20rem;
-  left: 22%;
-  top: 80%;
-}
-@keyframes object5 {
-  50% {
-    left: 20%;
-    top: 76%;
-  }
-}
-
-.wrapper-pages .object6 {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  background: linear-gradient(
-    45deg,
-    rgba(127, 0, 255, 0.2),
-    rgba(255, 192, 203, 0.2)
-  );
-  animation: object6 6s linear infinite;
-  overflow: hidden;
-  height: 20rem;
-  width: 20rem;
-  left: 22%;
-  top: 120%;
-}
-@keyframes object6 {
-  50% {
-    left: 20%;
-    top: 118%;
-  }
-}
 }
 @media screen and (min-width: 768px) and (max-width: 1800px) {
   .wrapper-pages .object5 {

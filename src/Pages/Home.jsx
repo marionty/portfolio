@@ -5,33 +5,42 @@ import ScrollIndicator from "../Components/ScrollIndicator";
 import Typed from 'typed.js';
 
 export default function Home() {
+  // Déclaration des états showFullText et loading à l'aide de useState hooks
   const [showFullText, setShowFullText] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  // Création d'une référence à un élément DOM (utilisée pour Typed.js)
   const el = useRef(null);
- 
+
+  // Utilisation de useEffect hook pour effectuer des opérations au chargement du composant
   useEffect(() => {
+    // Définition de l'état loading à true pour indiquer que le contenu est en cours de chargement
     setLoading(true);
 
-    // Initialisation de Typed.js pour l'animation du texte
+    // Initialisation de Typed.js pour l'animation du texte dans l'élément référencé par "el"
     const typed = new Typed(el.current, {
-      strings: ['web developer'],
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 80,
-      backDelay: 1500,
+      strings: ['web developer'], // Les phrases à afficher dans l'animation
+      loop: true, // Permet de répéter l'animation en boucle
+      typeSpeed: 100, // Vitesse de frappe de chaque lettre
+      backSpeed: 80, // Vitesse de la suppression de chaque lettre
+      backDelay: 1500, // Temps d'attente avant de commencer à supprimer le texte
     });
 
+    // Utilisation de setTimeout pour simuler un délai de chargement (2 secondes) avant de terminer le chargement
     setTimeout(() => {
-      setLoading(false);
+      setLoading(false); // Définition de l'état loading à false pour indiquer que le chargement est terminé
     }, 2000);
 
+    // La fonction renvoyée par useEffect est utilisée pour effectuer un nettoyage lorsqu'un composant est démonté
     return () => {
-      // Nettoyage de Typed.js lorsqu'il n'est plus utilisé
+      // Nettoyage de Typed.js lorsqu'il n'est plus utilisé pour éviter les fuites de mémoire
       typed.destroy();
     };
-  }, []);
-  
+  }, []); // Le tableau vide en second argument signifie que cette fonction useEffect sera exécutée une seule fois au chargement initial du composant
+
+  // Gestionnaire d'événement pour le clic sur un bouton
   const handleButtonClick = () => {
+    // Inversion de la valeur de showFullText à chaque clic sur le bouton
     setShowFullText(!showFullText);
   };
 
