@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Rocket from "../Components/rocket";
 import ScrollIndicator from "../Components/ScrollIndicator";
+import HobbiesCarousel from "../Components/HobbiesCarousel";
 import Typed from 'typed.js';
 
 export default function Home() {
@@ -165,6 +166,10 @@ export default function Home() {
          
        
       </section>
+  
+      <h3>Hobbies</h3>
+      <HobbiesCarousel />
+      
     </article>
   );
 }
