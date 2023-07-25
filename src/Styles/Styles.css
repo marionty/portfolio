@@ -1160,7 +1160,7 @@ footer {
   .infoabout__content {
     text-align: justify;
     letter-spacing: 1px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   .rocket-container {
     width: 90%;
@@ -1178,15 +1178,15 @@ footer {
   }
   /*carousel hobbie*/
 .carousel-container {
-  margin-bottom: -10rem;
+  margin-bottom: -9rem;
 }
 .img-hobbie {
-  width: 10rem;
+  width: 9rem;
   height: 6rem;
 }
 .img-hobbiee {
-  width: 10rem;
-  height: 10rem;
+  width: 9rem;
+  height: 9rem;
 }
   /*portfolio/my project*/
   .project-item img {
