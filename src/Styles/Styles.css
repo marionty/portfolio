@@ -58,6 +58,11 @@
 * HEADER
 * ----------------------------------------------------------------------------------------
 */
+
+body {
+  cursor: url('../../public/images/arc.png'), auto;
+}
+
 * {
   font-family: "oswald", sans-serif;
 }
@@ -239,6 +244,7 @@ nav {
 }
 .bt-profil:hover {
   background-color: #7f00ff;
+  cursor: pointer;
 }
 /* avatar profil */
 
@@ -345,6 +351,7 @@ nav {
 
 .infoabout__button:hover {
   background-position: right center;
+  cursor: pointer;
 }
 
 .infoabout__button:active {
@@ -404,6 +411,9 @@ nav {
   margin: 0;
   cursor: pointer;
 }
+.rocket-button:hover{
+  cursor: pointer;
+}
 button.rocket-button img {
   margin-top: -2.5rem; /* Vous pouvez ajuster cette valeur selon vos besoins */
 }
@@ -440,6 +450,9 @@ button.rocket-button img {
 
 .infoabout__button:active {
   background-position: 100% center;
+}
+.purple-text {
+  color: #7f00ff;
 }
 .carousel-container {
   

@@ -8,7 +8,6 @@ import Confetti from "react-dom-confetti";
 import "../Styles/Styles.css";
 
 const Contact = () => {
-  // État pour stocker les valeurs des champs de formulaire
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -16,73 +15,60 @@ const Contact = () => {
     message: "",
   });
 
-  // État pour indiquer si un champ de formulaire a le focus
   const [inputFocus, setInputFocus] = useState(false);
-
-  // État pour indiquer si le message a été envoyé avec succès
   const [isMessageSent, setIsMessageSent] = useState(false);
-
-
-  // État pour afficher ou masquer les confettis
   const [showConfetti, setShowConfetti] = useState(false);
 
-  // Gestionnaire de changement de champ de formulaire
   const handleInputChange = (e) => {
-    // Mise à jour des données du formulaire en copiant l'état actuel et en modifiant uniquement le champ spécifié
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Gestionnaire de soumission du formulaire
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validation des champs de formulaire avant l'envoi
     const emailPattern = /^[\w-]+(.[\w-]+)*@([\w-]+.)+[a-zA-Z]{2,7}$/;
+
+    // Validation des champs de formulaire avant l'envoi
+    if (
+      formData.firstname.trim() === "" ||
+      formData.lastname.trim() === "" ||
+      formData.email.trim() === "" ||
+      formData.message.trim() === ""
+    ) {
+      // Vérification des champs requis
+      alert("Veuillez remplir tous les champs du formulaire.");
+      return;
+    }
+
     if (!emailPattern.test(formData.email)) {
       // Vérification de la validité de l'e-mail
       alert("Email non valide");
       return;
     }
 
-    if (
-      formData.firstname !== "" &&
-      formData.lastname !== "" &&
-      formData.email !== "" &&
-      emailPattern.test(formData.email) &&
-      formData.message !== ""
-    ) {
-      // Paramètres pour l'envoi d'e-mail via le service emailjs
-      const serviceID = "service_zl06feb";
-      const templateID = "template_y7ubhkb";
-      const userID = "DwCzxlQFSlHiyszhY";
+    const serviceID = "service_zl06feb";
+    const templateID = "template_y7ubhkb";
+    const userID = "DwCzxlQFSlHiyszhY";
 
-      // Envoi de l'e-mail via emailjs
-      emailjs
-        .send(serviceID, templateID, formData, userID)
-        .then((response) => {
-          console.log("E-mail envoyé !", response.status, response.text);
-          // Mise à jour de l'état pour indiquer que le message a été envoyé avec succès
-          setIsMessageSent(true);
-          // Réinitialisation des valeurs du formulaire après l'envoi
-          setFormData({ firstname: "", lastname: "", email: "", message: "" });
-          // Affichage des confettis pour célébrer l'envoi réussi du message
-          setShowConfetti(true);
-        })
-        .catch((error) => {
-          console.error("Erreur lors de l'envoi de l'e-mail :", error);
-          // Affichage d'une alerte en cas d'erreur lors de l'envoi du message
-          alert(
-            "Une erreur s'est produite lors de l'envoi du message. Merci de réessayer."
-          );
-        });
-    }
+    emailjs
+      .send(serviceID, templateID, formData, userID)
+      .then((response) => {
+        console.log("E-mail envoyé !", response.status, response.text);
+        setIsMessageSent(true);
+        setFormData({ firstname: "", lastname: "", email: "", message: "" });
+        setShowConfetti(true);
+      })
+      .catch((error) => {
+        console.error("Erreur lors de l'envoi de l'e-mail :", error);
+        alert(
+          "Une erreur s'est produite lors de l'envoi du message. Merci de réessayer."
+        );
+      });
   };
 
-  // Effet pour masquer les confettis après 5 secondes
   useEffect(() => {
     if (showConfetti) {
       const timer = setTimeout(() => {
-        // Masquage des confettis après 5 secondes
         setShowConfetti(false);
       }, 5000);
 

@@ -6,12 +6,19 @@ import Portfolio from "./Pages/Portfolio";
 import Contact from "./Pages/Contact";
 import NavTemplate from "./Components/NavTemplate";
 import "./App.css";
+import Cursor from "./Components/Cursor";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [scaling, setscaling] = useState(false);
   return (
+    
     <main>
+      <div><Cursor scaling={scaling}/></div>
+
       <BrowserRouter>
         <Routes>
+       
           <Route path="/" element={<NavTemplate />}>
             {/* Route principale pour le NavTemplate */}
             <Route exact path="/" element={<Home />} />
@@ -25,6 +32,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      
     </main>
   );
 }

@@ -7,7 +7,7 @@ const Rocket = () => {
   
   // État pour suivre si le bouton est actif ou non
   const [buttonActive, setButtonActive] = useState(false);
-  
+
   // Animation de la fusée utilisant react-spring
   const rocketAnimation = useSpring({
     from: { top: '100%' },
@@ -30,12 +30,15 @@ const Rocket = () => {
         </div>
       
       {/* Bouton de lancement de la fusée */}
-      <button className={`rocket-button${buttonActive ? ' active' : ''}`}
+      <button 
+      className={`rocket-button${buttonActive ? ' active' : ''}`}
         onClick={startRocket}
         onMouseUp={() => setButtonActive(false)}
+       
       >
        <img src="../../images/start-button.png" alt="Bouton de lancement" />
       </button>
+      
       </div>
   
   );
