@@ -13,21 +13,23 @@ const Cursor = ({ scaling }) => {
     return randomColor;
   };
 
-  const handleMouseEnter = () => {
-    // Change la couleur du petit cercle lorsque la souris entre
-    setSmallCircleColor(getRandomColor());
-  };
-
   useEffect(() => {
     const mousemove = (e) => {
       setLargecircle({ x: e.clientX, y: e.clientY });
       setSmallcircle({ x: e.clientX, y: e.clientY });
     };
 
+    const intervalId = setInterval(() => {
+      // Change la couleur du petit cercle à intervalles réguliers
+      setSmallCircleColor(getRandomColor());
+    }, 3000); // Change la couleur toutes les 3 secondes (ajustez selon vos préférences)
+
     window.addEventListener("mousemove", mousemove);
 
+    // Nettoyage de l'intervalle lorsque le composant est démonté
     return () => {
       window.removeEventListener("mousemove", mousemove);
+      clearInterval(intervalId);
     };
   }, []);
 
@@ -38,9 +40,7 @@ const Cursor = ({ scaling }) => {
         className="large_circle"
       ></motion.div>
       <motion.div
-        initial={{ backgroundColor: smallCircleColor }}
-        animate={{ x: smallcircle.x - 8, y: smallcircle.y - 8 }}
-        onMouseEnter={handleMouseEnter}
+        animate={{ x: smallcircle.x - 8, y: smallcircle.y - 8, backgroundColor: smallCircleColor }}
         className="small_circle"
       ></motion.div>
     </div>

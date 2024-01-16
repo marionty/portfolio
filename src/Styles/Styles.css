@@ -486,119 +486,79 @@ button.rocket-button img {
   font-size: 3.7rem;
   font-weight: 900;
 }
-.Skill-content {
+ /*skills*/
+ 
+
+/* Ajoutez ces styles à votre fichier CSS existant */
+
+.skills {
+  width: 100%;
+}
+
+.skill-card {
+  width: 200px;
+  height: 300px;
+  perspective: 1000px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.skill-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-.Skill-content .icon {
-  font-size: 5rem;
-  margin-bottom: 0.5rem;
-  color: #bfadd9;
-  transition: transform 0.3s ease-in-out;
-}
-
-.Skill-content .icon:hover {
-  transform: rotate(360deg);
-}
-
-.Skill-content h4,
-.Skill-content h5,
-.Skill-content p {
-  margin: 0;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.Skill-content h4 {
-  font-weight: bold;
-  font-size: 2rem;
-  letter-spacing: 2px;
-}
-.Skill-content h5 {
-  text-decoration: underline;
-  letter-spacing: 1px;
-}
-.Skill-content p {
-  font-size: 1rem;
-  letter-spacing: 1px;
-}
-.Skill {
-  border: 2px solid;
-  padding: 1rem;
-}
-.flex-col {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.25rem;
-  margin-top: 3rem;
-  margin-left: 6rem;
-  margin-right: 6rem;
-}
-.Skill.zoomed {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.5);
-  z-index: 999;
-  width: 80%;
-  height: 80%;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  display: flex;
   justify-content: center;
   align-items: center;
-  overflow: auto;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: transform 0.5s;
 }
 
-.Skill.zoomed .Skill-content {
-  width: 100%;
-  max-width: 37.5rem;
-  padding: 1.25rem;
-}
-.flex-col .hide-skills .Skill:not(.zoomed) {
-  opacity: 0;
-  pointer-events: none;
-}
-.close-button {
-  margin-bottom: 20rem;
-  left: 10rem;
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: #fff;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1rem;
-  color: #333;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+.card-content.front {
+  transform: rotateY(0deg);
 }
 
-.Skill.zoomed .close-button {
-  z-index: 1;
+.card-content.back {
+  transform: rotateY(180deg);
 }
-.zoom-button {
-  margin-top: 0.6rem;
-  right: 0.6rem;
-  padding: 0.5rem 0.75rem;
-  background-color: black;
-  color: #fff;
-  border: none;
-  letter-spacing: 2px;
-  text-transform: capitalize;
-  font-weight: 400;
+
+.skill-card.flipped .card-content.front {
+  transform: rotateY(-180deg);
+}
+
+.skill-card.flipped .card-content.back {
+  transform: rotateY(0deg);
+}
+
+.card-content .icon {
+  font-size: 3rem;
+}
+
+.card-content h4 {
   font-size: 1.5rem;
-  cursor: pointer;
-  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
 }
 
-.zoom-button:hover {
-  background-color: #7f00ff;
+.card-content h5 {
+  font-size: 1.2rem;
 }
+
+.card-content p {
+  font-size: 1rem;
+}
+
+.flex-col {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /*Soft-Skills*/
 
@@ -1213,36 +1173,8 @@ footer {
     width: 86%;
   }
   
-  /*skills*/
-  .Skill {
-    width: 100%; /* Ajustez la valeur de la largeur selon vos besoins */
-  }
-  .skills h3,
-  .Soft-Skills h3 {
-    font-size: 2.5rem;
-  }
+ 
 
-  .Skill-content .icon {
-    font-size: 3rem;
-  }
-
-  .Skill-content h4 {
-    font-size: 1.5rem;
-  }
-
-  .Skill-content h5 {
-    font-size: 1.2rem;
-  }
-
-  .Skill-content p {
-    font-size: 1rem;
-  }
-
-  .flex-col {
-    grid-template-columns: repeat(1, 1fr);
-    margin-left: 2rem;
-    margin-right: 4rem;
-  }
 
   .soft-skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1257,23 +1189,7 @@ footer {
   .soft-skill-icon::before {
     font-size: 1.3rem;
   }
-  .Skill.zoomed {
-    transform: translate(-50%, -50%) scale(1.2); /* Ajustez la valeur de scale */
-
-    display: flex;
-    flex-direction: column; /* Organiser les éléments verticalement */
-    justify-content: center;
-    align-items: center;
-  }
-
-  .Skill.zoomed .close-button {
-    /* Styles pour la croix de fermeture */
-    margin: 0;
-    width: 2.5rem;
-    height: 2.5rem;
-    font-size: 2rem;
-  }
-
+  
   /* CONTACT*/
   .container-contact h3 {
     font-size: 2rem;
