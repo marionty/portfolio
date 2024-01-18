@@ -60,7 +60,7 @@
 */
 
 body {
-  cursor: url('../../public/images/arc.png'), auto;
+  cursor: url("../../public/images/arc.png"), auto;
 }
 
 * {
@@ -411,7 +411,7 @@ nav {
   margin: 0;
   cursor: pointer;
 }
-.rocket-button:hover{
+.rocket-button:hover {
   cursor: pointer;
 }
 button.rocket-button img {
@@ -455,10 +455,8 @@ button.rocket-button img {
   color: #7f00ff;
 }
 .carousel-container {
-  
   display: flex;
   justify-content: center;
-  
 }
 
 .img-hobbie {
@@ -476,6 +474,7 @@ button.rocket-button img {
 
 .skills {
   margin-top: 8rem;
+  width: 100%;
 }
 
 .skills h3,
@@ -486,14 +485,9 @@ button.rocket-button img {
   font-size: 3.7rem;
   font-weight: 900;
 }
- /*skills*/
- 
+/*skills*/
 
 /* Ajoutez ces styles à votre fichier CSS existant */
-
-.skills {
-  width: 100%;
-}
 
 .skill-card {
   width: 200px;
@@ -558,60 +552,129 @@ button.rocket-button img {
   justify-content: center;
   align-items: center;
 }
-
-
-/*Soft-Skills*/
-
-.Soft-Skills h3 {
-  color: #7f00ff;
-  text-align: center;
-  font-family: "oswald", sans-serif;
-  letter-spacing: 2px;
-  font-size: 3.7rem;
-  font-weight: 900;
-}
-
-.soft-skills-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
-  justify-items: center;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  padding: 0 10rem;
-}
-
-.soft-skill {
+/*soft-skills*/
+.softskill {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 45vh;
+  margin-bottom: 230px;
+}
+
+.menu {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.soft-skill-icon {
-  position: relative;
-  width: 15rem;
-  height: 15rem;
+.menu li {
+  position: absolute;
+  left: 0;
+  list-style: none;
+  transform-origin: 100px;
+  transition: 0.5s;
+  transition-delay: calc(0.1s * var(--i));
+  transform: rotate(0deg) translateX(25px) translateY(-70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  background: #fff;
   border-radius: 50%;
-  background-color: #bfadd9;
-  margin-bottom: 0.6rem;
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+  color: black;
 }
 
-.soft-skill-icon:hover {
-  background-color: black;
+.menu.active li {
+  transform: rotate(calc(360deg / 9 * var(--i))) translateX(100px)
+    translateY(-250px) scale(1);
+  z-index: 2;
 }
-.soft-skill-icon::before {
-  content: attr(data-content);
+
+.toggle {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  font-size: 2rem;
-  letter-spacing: 2px;
-  text-transform: capitalize;
-  font-weight: bold;
-  text-align: center;
+  width: 300px;
+  height: 300px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  font-size: 2em;
+  transition: transform 1.25s;
 }
+
+.menu.active .toggle {
+  transform: rotate(360deg) translateY(70px);
+  transform-origin: center;
+}
+.menu li span {
+  transform: rotate(calc(360deg / -9 * var(--i)));
+}
+.menu .toggle img {
+  width: 330px;
+  height: 330px;
+}
+/*education sur page educationSection*/
+
+/*expérience*/
+
+.experience-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 70px;
+}
+
+.experience-item {
+  margin-right: 80px;
+}
+
+.experience-title {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: black;
+  margin-top: 20px;
+}
+
+.experience-points {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.experience-point {
+  display: flex;
+  align-items: center;
+  color: black;
+ 
+}
+.horizontal-line {
+  border-top: 1px solid #7f00ff; /* Couleur de la ligne */
+  width: 100%;
+  margin-top: 40px; /* Ajustez la marge en fonction de vos besoins */
+  margin-bottom: 80px; /* Ajustez la marge en fonction de vos besoins */
+}
+.experience-circle {
+  width: 50px;
+  height: 50px;
+  background-color: #bfadd9; /* Couleur du cercle */
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  top: -22px; /* Ajustez la position verticale du cercle par rapport à la ligne */
+  margin-right: 310px; /* Ajustez la marge entre les cercles */
+  margin-left: 200px;
+}
+
 /* ----------------------------------------------------------------------------------------
 * PORTFOLIO/my projects
 * ----------------------------------------------------------------------------------------
@@ -1150,17 +1213,17 @@ footer {
     margin-top: -2.4rem;
   }
   /*carousel hobbie*/
-.carousel-container {
-  margin-bottom: -9rem;
-}
-.img-hobbie {
-  width: 9rem;
-  height: 6rem;
-}
-.img-hobbiee {
-  width: 9rem;
-  height: 9rem;
-}
+  .carousel-container {
+    margin-bottom: -9rem;
+  }
+  .img-hobbie {
+    width: 9rem;
+    height: 6rem;
+  }
+  .img-hobbiee {
+    width: 9rem;
+    height: 9rem;
+  }
   /*portfolio/my project*/
   .project-item img {
     width: 100%;
@@ -1172,9 +1235,6 @@ footer {
   .input-projects input {
     width: 86%;
   }
-  
- 
-
 
   .soft-skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1189,7 +1249,7 @@ footer {
   .soft-skill-icon::before {
     font-size: 1.3rem;
   }
-  
+
   /* CONTACT*/
   .container-contact h3 {
     font-size: 2rem;

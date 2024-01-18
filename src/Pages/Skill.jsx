@@ -16,13 +16,21 @@ import {
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 import SkillCard from "../Components/SkillCard";
+import EducationSection from "../Components/EducationSection";
 
 
 const Skill = () => {
   // État pour stocker les compétences
   const [skills, setSkills] = useState([]); // Tableau de compétences*/
 
+  const [educationData, setEducationData] = useState([]);
+  const [experienceData, setExperienceData] = useState([]);
+  const [selectedExperience, setSelectedExperience] = useState(null);
+  const [menuActive, setMenuActive] = useState(false);
 
+  const toggleMenu = () => {
+    setMenuActive(!menuActive);
+  };
 
   // Utilisation de useEffect pour initialiser les compétences au chargement de la page
   useEffect(() => {
@@ -104,6 +112,55 @@ const Skill = () => {
           "Comprend 4 logiciels principaux que j'ai réguliérement utilisé dans mes précédents postes",
       },
     ]);
+    setExperienceData([
+      {
+        title: (
+          <>
+            Novembre - décembre 2022 <strong>&rarr;</strong> <strong>Programme BTech à Euratechnologie</strong>
+          </>
+        ),
+        points: [
+          "- Découverte des métiers du Web - Recherche de formation",
+          "- Initiation au coding",
+          "- Création de site internet"
+          
+        ],
+      },
+      {
+        title: (
+          <>
+            Août - octobre 2023 <strong>&rarr;</strong> <strong>Stage de Développeuse web et web mobile chez Lota.cloud, Alacrité France</strong>
+          </>
+        ),
+        points: [
+          " Développer la partie front-end d’une application web ou web mobile en intégrant les recommandations de sécurité",
+          "- Maquetter une application",
+          "- Réaliser une interface utilisateur web statique et adaptable.",
+          "- Développer une interface utilisateur web dynamique.",
+          "- Réaliser une interface utilisateur avec une solution de gestion de contenu. ",
+          " Développer la partie back-end d’une application web ou web mobile en intégrant les recommandations de sécurité",
+          "- Créer une base de données.",
+          "- Développer les composants d’accès aux données.",
+          "- Développer la partie back-end d’une application web ou web mobile.",
+          "- Élaborer et mettre en œuvre des composants dans une application de gestion de contenu."
+        ],
+      },
+      {
+        title: (
+          <>
+            Novembre - décembre 2023 <strong>&rarr;</strong> <strong>Apple Foundation Program -
+Développement mobile iOS à Simplon</strong>
+          </>
+        ),
+        points: [
+          "- Mener une investigation du domaine choisi, identifier des besoins, concevoir une solution",
+          "- Maquetter l’interface d’une application mobile iOS avec Figma",
+          "- Bases de Swift et SwiftUI",
+          "- Développement du prototype en groupe - Présentations finales en groupe"
+        ],
+      },
+    ]);
+    
   }, []);
 
   return (
@@ -125,47 +182,88 @@ const Skill = () => {
       </section>
       <section className="Soft-Skills">
         <h3>Soft Skills</h3>
-        <div className="soft-skills-grid">
-          <div className="soft-skill">
-            <div
-              className="soft-skill-icon"
-              data-content="Problem Solving"
-            ></div>
+        <div className="softskill">
+          <div className={`menu ${menuActive ? "active" : ""}`}>
+            <div className="toggle" onClick={toggleMenu}>
+              <img src="images/knowhow.png" alt="" />
+            </div>
+            <ul>
+              <li style={{ "--i": 0 }}>
+                <span>Problem Solving</span>
+              </li>
+              <li style={{ "--i": 1 }}>
+                <span>Creativity</span>
+              </li>
+              <li style={{ "--i": 2 }}>
+                <span>Organizational</span>
+              </li>
+              <li style={{ "--i": 3 }}>
+                <span>Teamwork</span>
+              </li>
+              <li style={{ "--i": 4 }}>
+                <span>Adaptability</span>
+              </li>
+              <li style={{ "--i": 5 }}>
+                <span>Self-Motivation</span>
+              </li>
+              <li style={{ "--i": 6 }}>
+                <span>Communication</span>
+              </li>
+              <li style={{ "--i": 7 }}>
+                <span>Dynamic</span>
+              </li>
+              <li style={{ "--i": 8 }}>
+                <span>Curious</span>
+              </li>
+            </ul>
           </div>
-          <div className="soft-skill">
-            <div className="soft-skill-icon" data-content="Creativity"></div>
-          </div>
-          <div className="soft-skill">
-            <div
-              className="soft-skill-icon"
-              data-content="Organizational"
-            ></div>
-          </div>
-          <div className="soft-skill">
-            <div className="soft-skill-icon" data-content="Teamwork"></div>
-          </div>
-          <div className="soft-skill">
-            <div className="soft-skill-icon" data-content="Adaptability"></div>
-          </div>
-          <div className="soft-skill">
-            <div
-              className="soft-skill-icon"
-              data-content="Self-Motivation"
-            ></div>
-          </div>
-          <div className="soft-skill">
-            <div className="soft-skill-icon" data-content="Communication"></div>
-          </div>
-          <div className="soft-skill">
-            <div className="soft-skill-icon" data-content="Dynamic"></div>
-          </div>
-          <div className="soft-skill">
-            <div className="soft-skill-icon" data-content="Curious"></div>
-          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3>Education</h3>
+        <EducationSection
+          educationData={educationData}
+          setEducationData={setEducationData}
+        />
+      </section>
+
+      <section className="Experience">
+        <h3>Expérience</h3>
+        <div className="experience-grid">
+          {experienceData.map((experience, index) => (
+            <div key={index} className="experience-item">
+              <div
+                className="experience-title"
+                onClick={() =>
+                  setSelectedExperience(
+                    selectedExperience === index ? null : index
+                  )
+                }
+              >
+                {experience.title}
+              </div>
+              {selectedExperience === index && (
+                <div className="experience-points">
+                  {experience.points.map((point, pointIndex) => (
+                    <div key={pointIndex} className="experience-point">
+                      {point}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        {/* Ajoutez les cercles le long de la ligne horizontale */}
+        <div className="horizontal-line">
+          {experienceData.map((experience, index) => (
+            <div key={index} className="experience-circle" />
+          ))}
         </div>
       </section>
     </article>
   );
-          };
+};
 
-  export default Skill;
+export default Skill;
