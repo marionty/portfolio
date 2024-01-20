@@ -1,9 +1,9 @@
-// SkillCard.jsx
+
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../Styles/Styles.css";
 
-const SkillCard = ({ icon, title, type, description }) => {
+const SkillCard = ({ icon, title, type, description, hasNotions }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleCardFlip = () => {
@@ -16,9 +16,13 @@ const SkillCard = ({ icon, title, type, description }) => {
         <FontAwesomeIcon icon={icon} className="icon" />
         <h4>{title}</h4>
         <h5>{type}</h5>
+        {hasNotions && (
+          <p className="notions-text">Notions</p>
+        )}
       </div>
       <div className="card-content back">
         <p>{description}</p>
+        
       </div>
     </div>
   );

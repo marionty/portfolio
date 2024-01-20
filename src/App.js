@@ -23,7 +23,7 @@ const App = () => {
             {/* Route principale pour le NavTemplate */}
             <Route exact path="/" element={<Home />} />
             {/* Route pour la page d'accueil */}
-            <Route exact path="/Skills" element={<Skills />} />
+            <Route exact path="/Skills" element={<Skills  />} />
             {/* Route pour la page de compétences */}
             <Route exact path="/Portfolio" element={<Portfolio />} />
             {/* Route pour la page de portfolio */}

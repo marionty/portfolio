@@ -7,11 +7,14 @@ import {
   faCss3Alt,
   faJs,
   faReact,
+  faVuejs,
   faNodeJs,
   faPhp,
   faSymfony,
   faMicrosoft,
+  faFigma,
   faWordpress,
+  faSwift,
 } from "@fortawesome/free-brands-svg-icons";
 import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
@@ -33,85 +36,125 @@ const Skill = () => {
   };
 
   // Utilisation de useEffect pour initialiser les compétences au chargement de la page
-  useEffect(() => {
-    setSkills([
-      // Exemple de données de compétences
-      {
-        icon: faHtml5,
-        title: "HTML",
-        type: "Langage de balisage",
-        description:
-          "C'est la base! le langage de balisage standard utilisé pour créer la structure et le contenu d'une page web.",
-      },
+  // ...
 
-      {
-        icon: faCss3Alt,
-        title: "CSS",
-        type: "Langage de feuille de style",
-        description:
-          "Langage utilisé pour définir l'apparence et la mise en page d'une page web.",
-      },
-      {
-        icon: faJs,
-        title: "Javascript",
-        type: "Langage de programmation de scripts",
-        description:
-          "Je l'ai utilisé pour concevoir des sites web interactifs. Les fonctions JavaScript m'ont permis d'améliorer l'expérience utilisateur d'un site web, comme l'affichage d'animations et de cartes interactives. Par exemple un carrousel d'images, un menu déroulant « Cliquer pour afficher » ou le changement dynamique de la couleur des éléments d'une page web. ",
-      },
+useEffect(() => {
+  setSkills([
+    // Exemple de données de compétences
+    {
+      type: "< Langages >",
+      skills: [
+        {
+          icon: faHtml5,
+          title: "HTML",
+          hasNotions: false,
+          description:
+            "C'est la base! le langage de balisage standard utilisé pour créer la structure et le contenu d'une page web.",
+        },
+        {
+          icon: faCss3Alt,
+          title: "CSS",
+          hasNotions: false,
+          description:
+            "Langage utilisé pour définir l'apparence et la mise en page d'une page web.",
+        },
+        {
+          icon: faJs,
+          title: "Javascript",
+          hasNotions: false,
+          description:
+            "Je l'ai utilisé pour concevoir des sites web interactifs. Les fonctions JavaScript m'ont permis d'améliorer l'expérience utilisateur d'un site web, comme l'affichage d'animations et de cartes interactives. Par exemple un carrousel d'images, un menu déroulant « Cliquer pour afficher » ou le changement dynamique de la couleur des éléments d'une page web. ",
+        },
+        {
+          icon: faSwift,
+          title: "SwiftUI",
+          hasNotions: true,
+          description:
+            "Cadre d'application graphique permettant de créer des interfaces utilisateur pour iOS, iPadOS, watchOS, tvOS, visionOS et macOS, développé par Apple Inc. pour le langage de programmation Swift. ",
+        },
+      ],
+    },
+    {
+      type: "< Frameworks et Bibliothèques >",
+      skills: [
+        {
+          icon: faReact,
+          title: "React",
+          hasNotions: false,
+          description:
+            "Elle permet de simplifier la création d'interface, et une synchronisation plus simple et plus efficace entre les données de l'application et le rendu Html. Je l'ai utilisé pour construire ce portfolio et un site pour commander des burgers. ",
+        },
+        {
+          icon: faVuejs,
+          title: "Vue.js",
+          hasNotions: false,
+          description:
+            "C'est un framework JavaScript open-source utilisé pour construire des interfaces utilisateur et des applications web monopages. ",
+        },
+        {
+          icon: faNodeJs,
+          title: "Node js",
+          hasNotions: true,
+          description:
+            "Permettant de créer des applications rapides et évolutives côté serveur et en réseau. Par exemple pour mon projet de commande de burger, le panier de paiement, le formulaire de contact, et la gestion utilisateurs.",
+        },
+        {
+          icon: faPhp,
+          title: "PHP",
+          hasNotions: true,
+          description:
+            "Principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP. PHP est un langage impératif orienté objet. Il s'agit d'un langage de script interprété côté serveur.",
+        },
+        {
+          icon: faSymfony,
+          title: "Symfony",
+          hasNotions: true,
+          description:
+            "J'ai développé différents projets en symfony, ainsi utiliser des composants, comme Forms pour la création et le traitement des formulaire HTML, mailer pour l’envoi des mail et la construction de CRUD",
+        },
+      ],
+    },
+    {
+      type: "< Bases de données >",
+      skills: [
+        {
+          icon: faDatabase,
+          title: "Mysql",
+          hasNotions: false,
+          description:
+            "Lieu de stockage et d'enregistrement des données, que celles-ci soient ou non cryptées. Il est alors ensuite possible, via une requête SQL, d'aller récupérer des informations sur ce serveur très rapidement. C'est le cas, par exemple, avec les mots de passe enregistrés sur des sites web.",
+        },
+      ],
+    },
+    {
+      type: "< CMS et Outils >",
+      skills: [
+        {
+          icon: faWordpress,
+          title: "Wordpress",
+          hasNotions: true,
+          description:
+            "Ce logiciel écrit en PHP repose sur une base de données MySQL, il permet de publier et de gérer des contenus sur Internet. j'ai ainsi pu mettre en place un portfolio proposant un service de création de site web.",
+        },
+        {
+          icon: faFigma,
+          title: "Figma",
+          hasNotions: false,
+          description:
+            "Un éditeur de graphiques vectoriels et un outil de prototypage. Il est principalement basé sur le web, avec des fonctionnalités hors ligne supplémentaires activées par des applications de bureau pour macOS et Windows. ",
+        },
+        {
+          icon: faMicrosoft,
+          title: "Pack office",
+          hasNotions: false,
+          description:
+            "Suite bureautique mise au point par Microsoft, comprend 4 logiciels principaux que j'ai régulièrement utilisés dans mes précédents postes.",
+        },
+      ],
+    },
+  ]);
 
-      {
-        icon: faReact,
-        title: "React",
-        type: "Bibliothèque JavaScript libre",
-        description:
-          "Elle permet de simplifier la création d'interface, et une synchronisation plus simple et plus efficace entre les données de l'application et le rendu Html. Je l'ai utilisé pour construire ce portfolio et un site pour commander des burgers. ",
-      },
 
-      {
-        icon: faNodeJs,
-        title: "Node js",
-        type: "Plateforme logicielle libre en JavaScript",
-        description:
-          "Permettant de créer des applications rapides et évolutives côté serveur et en réseau. Par exemple pour mon projet de commande de burger, le panier de paiement, le formulaire de contact, et la gestion utilisateurs.",
-      },
-      {
-        icon: faPhp,
-        title: "PHP",
-        type: "Langage de programmation libre",
-        description:
-          "Principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP. PHP est un langage impératif orienté objet. Il s'agit d'un langage de script interprété côté serveur.",
-      },
-
-      {
-        icon: faDatabase,
-        title: "Mysql",
-        type: "Système de gestion de bases de données relationnelles",
-        description:
-          "Lieu de stockage et d'enregistrement des données, que celles-ci soient ou non cryptées. Il est alors ensuite possible, via une requête SQL, d'aller récupérer des informations sur ce serveur très rapidement. C'est le cas, par exemple, avec les mots de passe enregistrés sur des sites web.",
-      },
-
-      {
-        icon: faSymfony,
-        title: "Symfony",
-        type: "Framework PHP",
-        description:
-          "J'ai développé différents projets en symfony, ainsi utiliser des composants, comme Forms pour la création et le traitement des formulaire HTML, mailer pour l’envoi des mail et la construction de CRUD",
-      },
-      {
-        icon: faWordpress,
-        title: "Wordpress",
-        type: "CMS, système de gestion de contenu gratuit, libre et open-source.",
-        description:
-          "Ce logiciel écrit en PHP repose sur une base de données MySQL, il permet de publier et de gérer des contenus sur Internet. j'ai ainsi pu mettre en place un portfolio proposant un service de création de site web.",
-      },
-      {
-        icon: faMicrosoft,
-        title: "Pack office",
-        type: "Suite bureautique mise au point par Microsoft",
-        description:
-          "Comprend 4 logiciels principaux que j'ai réguliérement utilisé dans mes précédents postes",
-      },
-    ]);
     setExperienceData([
       {
         title: (
@@ -167,19 +210,29 @@ Développement mobile iOS à Simplon</strong>
     <article>
       <ScrollIndicator />
       <section className="skills">
-        <h3>Skills</h3>
-        <div className="flex-col">
-          {skills.map((skill, index) => (
+  <h3>Technical Skills</h3>
+  <div className="flex-row">
+    {skills.map((category, index) => (
+      <div key={index} className="skill-category">
+        <h4>{category.type}</h4>
+        <div className="flex-row">
+          {category.skills.map((skill, skillIndex) => (
             <SkillCard
-              key={index}
+              key={skillIndex}
               icon={skill.icon}
               title={skill.title}
               type={skill.type}
               description={skill.description}
+              hasNotions={skill.hasNotions || false}
             />
           ))}
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
+
+
       <section className="Soft-Skills">
         <h3>Soft Skills</h3>
         <div className="softskill">
