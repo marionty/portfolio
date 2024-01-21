@@ -80,32 +80,22 @@ const EducationSection = ({ educationData, setEducationData }) => {
 
 
   return (
-    <div style={{ width: "40%", margin: "0 auto" }}>
+    <div className="container">
       {educationData.map((section, index) => (
-        <div key={index} style={{ marginBottom: "10px" }}>
+        <div key={index} className="section">
           <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              border: "1px solid #ddd",
-              padding: "10px",
-              backgroundColor: expandedSections[index] ? "#bfadd9": "white",
-            
-            }}
+            className={`section-header ${expandedSections[index] ? "active" : ""}`}
           >
             <div>{section.title}</div>
             <div
               onClick={() => toggleSection(index)}
-              style={{ cursor: "pointer", padding: "5px" }}
+              className="expand-button"
             >
               {expandedSections[index] ? "-" : "+"}
             </div>
           </div>
           {expandedSections[index] && (
-            <div style={{ marginTop: "10px", marginLeft: "20px" }}>
-              {section.content}
-            </div>
+            <div className="section-content">{section.content}</div>
           )}
         </div>
       ))}

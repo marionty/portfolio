@@ -546,8 +546,11 @@ button.rocket-button img {
 
 .card-content.back {
   transform: rotateY(180deg);
+  font-size: 1rem;
+  text-align: center; 
+  margin: 0; 
 }
-.notions-text {
+.notions-text  {
   position: absolute;
   bottom: 10px;
   right: 10px;
@@ -578,11 +581,7 @@ button.rocket-button img {
   margin: 0; 
 }
 
-.card-content p {
-  font-size: 1rem;
-  text-align: center; 
-  margin: 0; 
-}
+
 
 
 /*soft-skills*/
@@ -657,6 +656,39 @@ button.rocket-button img {
 }
 /*education sur page educationSection*/
 
+
+.container {
+  width: 45%;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 10px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: white;
+}
+
+.section-header.active {
+  background-color: #bfadd9;
+}
+
+.expand-button {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.section-content {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
 /*expérience*/
 
 .experience-grid {
@@ -668,20 +700,28 @@ button.rocket-button img {
 
 .experience-item {
   margin-right: 80px;
+  margin-bottom: 80px;
 }
 
 .experience-title {
-  display: flex;
-  align-items: center;
+  flex-direction: column; /* Changez la direction en colonne pour empiler les éléments */
+  align-items: flex-start;
   cursor: pointer;
   color: black;
-  margin-top: 20px;
+  
+}
+.experience-title span {
+  margin-bottom: 5px; /* Ajoutez une marge entre les lignes */
+  white-space: nowrap; /* Empêchez le texte de se diviser sur plusieurs lignes horizontalement */
 }
 
+.experience-title strong {
+  white-space: normal; /* Permettez au texte fort de se diviser sur plusieurs lignes */
+}
 .experience-points {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  
 }
 
 .experience-point {
@@ -694,7 +734,7 @@ button.rocket-button img {
   border-top: 1px solid #7f00ff; 
   width: 100%;
   margin-top: 40px; 
-  margin-bottom: 80px; 
+  margin-bottom: 30px; 
 }
 .experience-circle {
   width: 50px;
@@ -1257,6 +1297,153 @@ footer {
     width: 9rem;
     height: 9rem;
   }
+  /*skill experience*/
+  .skill-card {
+    width: 120px; /* Ajustez la largeur selon vos préférences pour les écrans plus petits */
+    height: 180px; /* Ajustez la hauteur selon vos préférences pour les écrans plus petits */
+    margin: 2px; /* Ajoutez une marge autour de chaque carte */
+  }
+  
+  .card-content .icon {
+    font-size: 3rem; /* Ajustez la taille selon vos préférences pour les écrans plus petits */
+    margin-bottom: 6px;
+  }
+  
+  .card-content h4 {
+    font-size: 1.5rem; /* Ajustez la taille selon vos préférences pour les écrans plus petits */
+  }
+  
+  .card-content h5
+  {
+    font-size: 0.5rem; /* Ajustez la taille selon vos préférences pour les écrans plus petits */
+  }
+  .card-content.back {
+    font-size: 0.5rem; /* Ajustez la taille selon vos préférences pour les écrans plus petits */
+    margin: -4px;
+    box-sizing: border-box;
+  }
+  .notions-text {
+    font-size: 1rem;
+    color: black;
+    
+  }
+  .slider {
+    margin: -15px 120px; /* Ajustez la marge autour du carrousel */
+  }
+  
+  .slider div {
+    margin: 0 0px -10px; /* Ajustez la marge entre chaque élément du carrousel */
+  }
+  
+  /*softskills*/
+  .softskill { 
+    margin: -60px;
+  }
+  .menu {
+    width: 150px; /* Taille du grand cercle en version mobile */
+    height: 150px;
+  
+  }
+
+  .menu li {
+    transform-origin: 60px; /* Réduisez la distance des petits cercles par rapport au centre en version mobile */
+    width: 100px; /* Taille des petits cercles en version mobile */
+    height: 100px;
+    margin-left: 13px;
+    transform: rotate(0deg) translateX(25px) translateY(-100px); /* Ajustez la position des petits cercles */
+  }
+
+  .menu.active li {
+    transform: rotate(calc(360deg / 9 * var(--i))) translateX(30px) translateY(-130px) scale(0.7); /* Ajustez la taille et la position des petits cercles en mode actif */
+ 
+  }
+
+  .toggle {
+    width: 150px; /* Taille du bouton central en version mobile */
+    height: 150px;
+    font-size: 1em; /* Ajustez la taille de la police du bouton central en version mobile */
+  }
+  .menu.active .toggle {
+    transform: rotate(360deg) translateY(50px);
+    transform-origin: center;
+  }
+  .menu .toggle img {
+    width: 200px; /* Taille de l'image dans le bouton central en version mobile */
+    height: 200px;
+  }
+ /*education*/
+ .container {
+  width: 70%; /* Ajustez la largeur pour la version mobile */
+  margin: 0 auto; /* Vous pouvez ajuster la marge si nécessaire */
+}
+
+.section-header {
+  padding: 5px; /* Ajustez la marge intérieure pour la version mobile */
+}
+
+.section-content {
+  margin-left: 10px; /* Ajustez la marge de gauche pour la version mobile */
+}
+
+/* Expérience Section Styles */
+
+.experience-grid {
+  display: flex;
+  flex-direction: column; /* Changez la direction en colonne pour la version mobile */
+  align-items: flex-start; /* Alignez les expériences à gauche pour la version mobile */
+  margin-left: 100px; /* Réinitialisez la marge à zéro */
+  height: auto;
+}
+
+.experience-item {
+  margin-right: 20px; /* Réinitialisez la marge à zéro */
+  margin-bottom: 90px; /* Ajoutez une marge entre les expériences pour la version mobile */
+}
+
+.experience-title {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: black;
+}
+
+.experience-points {
+  display: flex;
+  flex-direction: column; /* Changez la direction en colonne pour les points */
+  
+}
+
+.experience-point {
+  display: flex;
+  align-items: center;
+  color: black;
+
+}
+.vertical-line {
+  border-left: 1px solid #7f00ff;
+  height: auto;
+  position: absolute;
+  left: 70px; /* Ajustez la position à gauche */
+  
+  pointer-events: none; /* Désactive les événements pointer pour permettre aux clics de passer à travers */
+}
+
+
+.experience-circle {
+  width: 20px; /* Réduisez la taille du cercle pour la version mobile */
+  height: 20px; /* Réduisez la taille du cercle pour la version mobile */
+  background-color: #bfadd9;
+  border-radius: 50%;
+  margin-right: 0px; /* Réinitialisez la marge à zéro */
+  margin-top: 30px;
+  margin-bottom: 110px; /* Ajoutez une marge entre les cercles pour la version mobile */
+right:260px;
+}
+
+.horizontal-line {
+  display: none;
+}
+
   /*portfolio/my project*/
   .project-item img {
     width: 100%;
@@ -1269,19 +1456,6 @@ footer {
     width: 86%;
   }
 
-  .soft-skills-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    padding: 0;
-  }
-
-  .soft-skill-icon {
-    width: 10rem;
-    height: 10rem;
-  }
-
-  .soft-skill-icon::before {
-    font-size: 1.3rem;
-  }
 
   /* CONTACT*/
   .container-contact h3 {
