@@ -8,41 +8,49 @@ const Cursor = ({ scaling }) => {
   const [smallCircleColor, setSmallCircleColor] = useState("aqua");
 
   const getRandomColor = () => {
-    // Génère une couleur hexadécimale aléatoire
     const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
     return randomColor;
   };
 
   useEffect(() => {
-    const mousemove = (e) => {
+    const handleMousemove = (e) => {
       setLargecircle({ x: e.clientX, y: e.clientY });
       setSmallcircle({ x: e.clientX, y: e.clientY });
     };
 
     const intervalId = setInterval(() => {
-      // Change la couleur du petit cercle à intervalles réguliers
       setSmallCircleColor(getRandomColor());
-    }, 3000); // Change la couleur toutes les 3 secondes (ajustez selon vos préférences)
+    }, 3000);
 
-    window.addEventListener("mousemove", mousemove);
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
-    // Nettoyage de l'intervalle lorsque le composant est démonté
+    if (!isMobile) {
+      window.addEventListener("mousemove", handleMousemove);
+    }
+
     return () => {
-      window.removeEventListener("mousemove", mousemove);
+      if (!isMobile) {
+        window.removeEventListener("mousemove", handleMousemove);
+      }
       clearInterval(intervalId);
     };
   }, []);
 
+  // Rendu conditionnel en fonction de la largeur de l'écran
   return (
     <div>
-      <motion.div
-        animate={{ x: largecircle.x - 32, y: largecircle.y - 32, scale: scaling ? 0.1 : 1 }}
-        className="large_circle"
-      ></motion.div>
-      <motion.div
-        animate={{ x: smallcircle.x - 8, y: smallcircle.y - 8, backgroundColor: smallCircleColor }}
-        className="small_circle"
-      ></motion.div>
+      {!window.matchMedia("(max-width: 768px)").matches && (
+        <>
+          <motion.div
+            animate={{ x: largecircle.x - 32, y: largecircle.y - 32, scale: scaling ? 0.1 : 1 }}
+            className="large_circle"
+          ></motion.div>
+          <motion.div
+            animate={{ x: smallcircle.x - 8, y: smallcircle.y - 8, backgroundColor: smallCircleColor }}
+            className="small_circle"
+          ></motion.div>
+        </>
+      )}
     </div>
   );
 };
