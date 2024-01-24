@@ -8,29 +8,33 @@ import NavTemplate from "./Components/NavTemplate";
 import "./App.css";
 import Cursor from "./Components/Cursor";
 import { useState } from "react";
+import ScrollToTopOnPageChange from './Components/ScrollToTopOnPageChange';
 
 const App = () => {
   const [scaling, setscaling] = useState(false);
   return (
     
     <main>
-      <div><Cursor scaling={scaling}/></div>
+      
 
       <BrowserRouter>
+      <ScrollToTopOnPageChange />
+      <Cursor scaling={scaling}/>
         <Routes>
        
           <Route path="/" element={<NavTemplate />}>
-            {/* Route principale pour le NavTemplate */}
+        
             <Route exact path="/" element={<Home />} />
-            {/* Route pour la page d'accueil */}
+           
             <Route exact path="/Skills" element={<Skills  />} />
-            {/* Route pour la page de compétences */}
+         
             <Route exact path="/Portfolio" element={<Portfolio />} />
-            {/* Route pour la page de portfolio */}
+
             <Route exact path="/Contact" element={<Contact />} />
-            {/* Route pour la page de contact */}
+            
           </Route>
         </Routes>
+        
       </BrowserRouter>
       
     </main>

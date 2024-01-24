@@ -23,14 +23,15 @@ import EducationSection from "../Components/EducationSection";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ExperienceSection from "../Components/ExperienceSection";
 
 const Skill = () => {
   // État pour stocker les compétences
-  const [skills, setSkills] = useState([]); // Tableau de compétences*/
 
+  const [skills, setSkills] = useState([]); // Tableau de compétences
   const [educationData, setEducationData] = useState([]);
   const [experienceData, setExperienceData] = useState([]);
-  const [selectedExperience, setSelectedExperience] = useState(null);
+
   const [menuActive, setMenuActive] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -162,8 +163,8 @@ const Skill = () => {
         title: (
           <>
             <span>Novembre - décembre 2022 </span>
-            <strong>&rarr;</strong>{" "}
-            <strong>Programme BTech à Euratechnologie</strong>
+            <strong>&rarr;
+           Programme BTech à Euratechnologie</strong>
           </>
         ),
         points: [
@@ -175,8 +176,9 @@ const Skill = () => {
       {
         title: (
           <>
-            Août - octobre 2023 <strong>&rarr;</strong>{" "}
-            <strong>
+            <span>Août - octobre 2023 </span>
+            <strong>&rarr;
+           
               Stage de Développeuse web et web mobile chez Lota.cloud, Alacrité
               France
             </strong>
@@ -198,8 +200,8 @@ const Skill = () => {
       {
         title: (
           <>
-            Novembre - décembre 2023 <strong>&rarr;</strong>{" "}
-            <strong>
+            <span>Novembre - décembre 2023 </span><strong>&rarr;
+            
               Apple Foundation Program - Développement mobile iOS à Simplon
             </strong>
           </>
@@ -212,6 +214,8 @@ const Skill = () => {
         ],
       },
     ]);
+
+    // Mise à jour de la variable isMobile lorsqu'il y a un changement de taille d'écran
     const updateIsMobile = () => {
       setIsMobile(window.matchMedia("(max-width: 768px)").matches);
     };
@@ -311,55 +315,14 @@ const Skill = () => {
         </div>
       </section>
 
+      <ExperienceSection experienceData={experienceData} isMobile={isMobile} />
+
       <section>
         <h3>Education</h3>
         <EducationSection
           educationData={educationData}
           setEducationData={setEducationData}
         />
-      </section>
-
-      <section className="Experience">
-        <h3>Expérience</h3>
-        {isMobile ? (
-          <div className="vertical-line">
-            {experienceData.map((experience, index) => (
-              <div key={index} className="experience-circle" />
-            ))}
-          </div>
-        ) : (
-          <div className="horizontal-line">
-            {experienceData.map((experience, index) => (
-              <div key={index} className="experience-circle" />
-            ))}
-          </div>
-        )}
-        <div className="experience-grid">
-          {experienceData.map((experience, index) => (
-            <div key={index} className="experience-item">
-              <div
-                className="experience-title"
-                onClick={() =>
-                  setSelectedExperience(
-                    selectedExperience === index ? null : index
-                  )
-                }
-                
-              >
-                {experience.title}
-              </div>
-              {selectedExperience === index && (
-                <div className="experience-points">
-                  {experience.points.map((point, pointIndex) => (
-                    <div key={pointIndex} className="experience-point">
-                      {point}
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
       </section>
     </article>
   );

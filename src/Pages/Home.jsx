@@ -5,10 +5,12 @@ import ScrollIndicator from "../Components/ScrollIndicator";
 import HobbiesCarousel from "../Components/HobbiesCarousel";
 import Typed from 'typed.js';
 
+
 export default function Home() {
   // Déclaration des états showFullText et loading à l'aide de useState hooks
   const [showFullText, setShowFullText] = useState(false);
   const [loading, setLoading] = useState(false);
+  
 
   // Création d'une référence à un élément DOM (utilisée pour Typed.js)
   const el = useRef(null);
@@ -50,6 +52,7 @@ export default function Home() {
     <article>
       <section className="profil">
         <div className="wrapper">
+       
           <ScrollIndicator />
           <div className="cols cols0">
             <span className="topline">Hello </span>
@@ -59,7 +62,7 @@ export default function Home() {
             </h1>
             <div className="button-profil">
               <a
-                href="/cv.pdf"
+                href="/cvMT.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 download
@@ -168,4 +171,4 @@ export default function Home() {
       
     </article>
   );
-}
+                }

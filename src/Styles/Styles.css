@@ -53,15 +53,31 @@
     transform: translate3d(-100%, 0, 0);
   }
 }
+/* ----------------------------------------------------------------------------------------
+* MOUSE
+* ----------------------------------------------------------------------------------------
+*/
+.large_circle,
+.small_circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: #7f00ff;
+  position: fixed;
+  pointer-events: none;
+  transition: transform 0.1s;
+}
+.small_circle {
+  width: 16px;
+  height: 16px;
+
+  transition: transform 0.3s;
+}
 
 /* ----------------------------------------------------------------------------------------
 * HEADER
 * ----------------------------------------------------------------------------------------
 */
-
-body {
-  cursor: url("../../public/images/arc.png"), auto;
-}
 
 * {
   font-family: "oswald", sans-serif;
@@ -237,10 +253,11 @@ nav {
   background-color: black;
   padding: 0.5rem 0.8rem;
   margin: 2.5rem 0.3rem;
-
+  z-index: 1000;
   letter-spacing: 2px;
   text-transform: capitalize;
   box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+  position: relative;
 }
 .bt-profil:hover {
   background-color: #7f00ff;
@@ -347,6 +364,8 @@ nav {
   background-size: 200% auto;
   transition: background-position 0.3s;
   font-size: 1rem;
+  position: relative;
+  z-index: 1000;
 }
 
 .infoabout__button:hover {
@@ -410,6 +429,8 @@ nav {
   padding: 0;
   margin: 0;
   cursor: pointer;
+  position: relative;
+  z-index: 1000;
 }
 .rocket-button:hover {
   cursor: pointer;
@@ -488,17 +509,16 @@ button.rocket-button img {
 }
 
 .flex-row {
-  
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; 
+  justify-content: center;
   align-items: center;
 }
 
 .skill-category {
   width: 100%;
   margin: 20px 0;
-  text-align: center; 
+  text-align: center;
   font-size: 1.5rem;
 }
 
@@ -547,14 +567,15 @@ button.rocket-button img {
 .card-content.back {
   transform: rotateY(180deg);
   font-size: 1rem;
-  text-align: center; 
-  margin: 0; 
+  text-align: center;
+  margin: 0;
 }
-.notions-text  {
+.notions-text {
   position: absolute;
   bottom: 10px;
   right: 10px;
-  color: #bfadd9; }
+  color: #bfadd9;
+}
 
 .skill-card.flipped .card-content.front {
   transform: rotateY(-180deg);
@@ -566,23 +587,20 @@ button.rocket-button img {
 
 .card-content .icon {
   font-size: 3rem;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .card-content h4 {
   font-size: 1.5rem;
-  text-align: center; 
-  margin: 0; 
+  text-align: center;
+  margin: 0;
 }
 
 .card-content h5 {
   font-size: 1.2rem;
-  text-align: center; 
-  margin: 0; 
+  text-align: center;
+  margin: 0;
 }
-
-
-
 
 /*soft-skills*/
 .softskill {
@@ -590,7 +608,8 @@ button.rocket-button img {
   justify-content: center;
   align-items: center;
   min-height: 50vh;
-  margin-bottom: 230px;
+  margin-bottom: 210px;
+  margin-top: 70px;
 }
 
 .menu {
@@ -656,10 +675,9 @@ button.rocket-button img {
 }
 /*education sur page educationSection*/
 
-
 .container {
-  width: 45%;
-  margin: 0 auto;
+  width: 48%;
+  margin: 0 auto 80px;
 }
 
 .section {
@@ -694,30 +712,40 @@ button.rocket-button img {
 .experience-grid {
   display: flex;
   flex-direction: row;
-  align-items: center;
+ 
   margin-left: 70px;
+  align-items: stretch;
 }
 
 .experience-item {
-  margin-right: 80px;
+  flex: 1; /* Utiliser la propriété flex pour répartir l'espace de manière égale entre les éléments */
+  margin-right: 80px; /* Ajuster la marge entre les éléments selon vos préférences */
   margin-bottom: 80px;
 }
 
 .experience-title {
-  flex-direction: column; /* Changez la direction en colonne pour empiler les éléments */
-  align-items: flex-start;
+  flex-direction: column;
+
   cursor: pointer;
   color: black;
-  
+  border: 2px solid #7f00ff;
+  padding: 10px;
+  border-radius: 8px;
+  align-items: center; /* Centrer les éléments horizontalement */
+  text-align: center; /* Centrer le texte à l'intérieur */
 }
+
 .experience-title span {
-  margin-bottom: 5px; /* Ajoutez une marge entre les lignes */
-  white-space: nowrap; /* Empêchez le texte de se diviser sur plusieurs lignes horizontalement */
+  display: block; /* Faire en sorte que le span occupe toute la largeur */
+  
 }
 
 .experience-title strong {
-  white-space: normal; /* Permettez au texte fort de se diviser sur plusieurs lignes */
+  display: block; /* Faire en sorte que la strong occupe toute la largeur */
+  margin-top: 10px; /* Ajouter une marge en haut pour l'espace entre les éléments */
+  text-align: left;
 }
+
 .experience-points {
   display: flex;
   flex-direction: column;
@@ -728,24 +756,32 @@ button.rocket-button img {
   display: flex;
   align-items: center;
   color: black;
- 
+  
+}
+.plus-icon {
+  color: white; /* Couleur blanche */
+  font-size: 1.2rem; /* Ajustez la taille de la police selon vos préférences */
+  margin-right: -60px; /* Ajustez la marge à droite pour l'espacement */
 }
 .horizontal-line {
-  border-top: 1px solid #7f00ff; 
+  border-top: 1px solid #7f00ff;
   width: 100%;
-  margin-top: 40px; 
-  margin-bottom: 30px; 
+  margin-top: 40px;
+  margin-bottom: 30px;
 }
 .experience-circle {
   width: 50px;
   height: 50px;
-  background-color: #bfadd9; 
+  background-color: #bfadd9;
   border-radius: 50%;
   display: inline-block;
   position: relative;
-  top: -22px; 
-  margin-right: 260px; 
+  top: -22px;
+  margin-right: 260px;
   margin-left: 250px;
+  cursor: pointer;
+  
+ 
 }
 
 /* ----------------------------------------------------------------------------------------
@@ -977,11 +1013,13 @@ footer {
   flex: 1;
   display: flex;
   justify-content: center;
+  z-index: 1000;
 }
 
 .logo-footer img {
   width: 5rem;
   cursor: pointer;
+  background: none;
 }
 
 .navItems-footer {
@@ -991,6 +1029,7 @@ footer {
   justify-content: center;
   align-items: center;
   margin-right: 2rem;
+  z-index: 1000;
 }
 
 .navItems-footer li {
@@ -1000,13 +1039,19 @@ footer {
   text-transform: capitalize;
 }
 
+.logo-footer:hover img,
+.links-footer a:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(1.5);
+}
+
 .navItems-footer a {
   color: #ffffff;
   text-decoration: none;
 }
 
-.navItems-footer li:hover a,
-.links-footer a:hover {
+.navItems-footer li:hover a {
   color: #7f00ff;
 }
 
@@ -1015,6 +1060,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 .links-footer a {
@@ -1303,18 +1349,17 @@ footer {
     height: 180px; /* Ajustez la hauteur selon vos préférences pour les écrans plus petits */
     margin: 2px; /* Ajoutez une marge autour de chaque carte */
   }
-  
+
   .card-content .icon {
     font-size: 3rem; /* Ajustez la taille selon vos préférences pour les écrans plus petits */
     margin-bottom: 6px;
   }
-  
+
   .card-content h4 {
     font-size: 1.5rem; /* Ajustez la taille selon vos préférences pour les écrans plus petits */
   }
-  
-  .card-content h5
-  {
+
+  .card-content h5 {
     font-size: 0.5rem; /* Ajustez la taille selon vos préférences pour les écrans plus petits */
   }
   .card-content.back {
@@ -1325,25 +1370,23 @@ footer {
   .notions-text {
     font-size: 1rem;
     color: black;
-    
   }
   .slider {
     margin: -15px 120px; /* Ajustez la marge autour du carrousel */
   }
-  
+
   .slider div {
     margin: 0 0px -10px; /* Ajustez la marge entre chaque élément du carrousel */
   }
-  
+
   /*softskills*/
-  .softskill { 
+  .softskill {
     height: auto;
     margin-bottom: 0;
   }
   .menu {
     width: 150px; /* Taille du grand cercle en version mobile */
     height: 150px;
-  
   }
 
   .menu li {
@@ -1355,8 +1398,8 @@ footer {
   }
 
   .menu.active li {
-    transform: rotate(calc(360deg / 9 * var(--i))) translateX(30px) translateY(-130px) scale(0.7); /* Ajustez la taille et la position des petits cercles en mode actif */
- 
+    transform: rotate(calc(360deg / 9 * var(--i))) translateX(30px)
+      translateY(-130px) scale(0.7); /* Ajustez la taille et la position des petits cercles en mode actif */
   }
 
   .toggle {
@@ -1372,78 +1415,75 @@ footer {
     width: 200px; /* Taille de l'image dans le bouton central en version mobile */
     height: 200px;
   }
- /*education*/
- .container {
-  width: 70%; /* Ajustez la largeur pour la version mobile */
-  margin: 0 auto; /* Vous pouvez ajuster la marge si nécessaire */
-}
+  /*education*/
+  .container {
+    width: 70%; /* Ajustez la largeur pour la version mobile */
+    margin: 0 auto; /* Vous pouvez ajuster la marge si nécessaire */
+  }
 
-.section-header {
-  padding: 5px; /* Ajustez la marge intérieure pour la version mobile */
-}
+  .section-header {
+    padding: 5px; /* Ajustez la marge intérieure pour la version mobile */
+  }
 
-.section-content {
-  margin-left: 10px; /* Ajustez la marge de gauche pour la version mobile */
-}
+  .section-content {
+    margin-left: 10px; /* Ajustez la marge de gauche pour la version mobile */
+  }
 
-/* Expérience Section Styles */
+  /* Expérience Section Styles */
 
-.experience-grid {
-  display: flex;
-  flex-direction: column; /* Changez la direction en colonne pour la version mobile */
-  align-items: flex-start; /* Alignez les expériences à gauche pour la version mobile */
-  margin-left: 100px; /* Réinitialisez la marge à zéro */
-  height: auto;
-}
+  .experience-grid {
+    display: flex;
+    flex-direction: column; /* Changez la direction en colonne pour la version mobile */
+    align-items: flex-start; /* Alignez les expériences à gauche pour la version mobile */
+    margin-left: 100px; /* Réinitialisez la marge à zéro */
+    height: auto;
+  }
 
-.experience-item {
-  margin-right: 20px; /* Réinitialisez la marge à zéro */
-  margin-bottom: 90px; /* Ajoutez une marge entre les expériences pour la version mobile */
-}
+  .experience-item {
+    margin-right: 20px; /* Réinitialisez la marge à zéro */
+    margin-bottom: 90px; /* Ajoutez une marge entre les expériences pour la version mobile */
+  }
 
-.experience-title {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  color: black;
-}
+  .experience-title {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: black;
+  }
 
-.experience-points {
-  display: flex;
-  flex-direction: column; /* Changez la direction en colonne pour les points */
-  
-}
+  .experience-points {
+    display: flex;
+    flex-direction: column; /* Changez la direction en colonne pour les points */
+  }
 
-.experience-point {
-  display: flex;
-  align-items: center;
-  color: black;
+  .experience-point {
+    display: flex;
+    align-items: center;
+    color: black;
+  }
+  .vertical-line {
+    border-left: 1px solid #7f00ff;
+    height: auto;
+    position: absolute;
+    left: 70px; /* Ajustez la position à gauche */
 
-}
-.vertical-line {
-  border-left: 1px solid #7f00ff;
-  height: auto;
-  position: absolute;
-  left: 70px; /* Ajustez la position à gauche */
-  
-  pointer-events: none; /* Désactive les événements pointer pour permettre aux clics de passer à travers */
-}
+    pointer-events: none; /* Désactive les événements pointer pour permettre aux clics de passer à travers */
+  }
 
+  .experience-circle {
+    width: 20px; /* Réduisez la taille du cercle pour la version mobile */
+    height: 20px; /* Réduisez la taille du cercle pour la version mobile */
+    background-color: #bfadd9;
+    border-radius: 50%;
+    margin-right: 0px; /* Réinitialisez la marge à zéro */
+    margin-top: 30px;
+    margin-bottom: 110px; /* Ajoutez une marge entre les cercles pour la version mobile */
+    right: 260px;
+  }
 
-.experience-circle {
-  width: 20px; /* Réduisez la taille du cercle pour la version mobile */
-  height: 20px; /* Réduisez la taille du cercle pour la version mobile */
-  background-color: #bfadd9;
-  border-radius: 50%;
-  margin-right: 0px; /* Réinitialisez la marge à zéro */
-  margin-top: 30px;
-  margin-bottom: 110px; /* Ajoutez une marge entre les cercles pour la version mobile */
-right:260px;
-}
-
-.horizontal-line {
-  display: none;
-}
+  .horizontal-line {
+    display: none;
+  }
 
   /*portfolio/my project*/
   .project-item img {
@@ -1456,7 +1496,6 @@ right:260px;
   .input-projects input {
     width: 86%;
   }
-
 
   /* CONTACT*/
   .container-contact h3 {

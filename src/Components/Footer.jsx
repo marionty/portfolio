@@ -6,11 +6,11 @@ function Footer() {
   return (
     <footer>
   <div className="links-footer">
-    {/* Lien vers le profil LinkedIn */}
+  
     <Link to="https://www.linkedin.com/in/tytgatmarion/" target="_blank">
       <FontAwesomeIcon icon={faLinkedin} />
     </Link>
-    {/* Lien vers le profil GitHub */}
+    
     <Link to="https://github.com/marionty" target="_blank">
       <FontAwesomeIcon icon={faGithub} />
     </Link>
@@ -18,15 +18,15 @@ function Footer() {
 
   <ul className="navItems-footer">
     <li>
-      {/* Lien vers la page d'accueil */}
+     
       <Link to="/">Accueil</Link>
     </li>
     <li>
-      {/* Lien vers la page des compétences */}
-      <Link to="/Skills">Skills</Link>
+     
+      <Link to="/Skills">Skills & Experiences</Link>
     </li>
     <li>
-      {/* Lien vers la page du portfolio */}
+      
       <Link to="/portfolio">Portfolio</Link>
     </li>
     <li>
