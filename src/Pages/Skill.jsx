@@ -53,14 +53,14 @@ const Skill = () => {
             title: "HTML",
             hasNotions: false,
             description:
-              "C'est la base! le langage de balisage standard utilisé pour créer la structure et le contenu d'une page web.",
+              "C'est la base! le langage de balisage standard utilisé pour créer la structure et le contenu d'une page web. Que j'ai découvert à Btech et lors de mon 1er projet \"site de musiciens\"."
           },
           {
             icon: faCss3Alt,
             title: "CSS",
             hasNotions: false,
             description:
-              "Langage utilisé pour définir l'apparence et la mise en page d'une page web.",
+              "Langage utilisé pour définir l'apparence et la mise en page d'une page web. Que j'ai découvert à Btech et lors de mon 1er projet \"site de musiciens\"."
           },
           {
             icon: faJs,
@@ -74,7 +74,7 @@ const Skill = () => {
             title: "SwiftUI",
             hasNotions: true,
             description:
-              "Cadre d'application graphique permettant de créer des interfaces utilisateur pour iOS, iPadOS, watchOS, tvOS, visionOS et macOS, développé par Apple Inc. pour le langage de programmation Swift. ",
+              "Cadre d'application graphique permettant de créer des interfaces utilisateur pour iOS, iPadOS, watchOS, tvOS, visionOS et macOS, développé par Apple Inc. pour le langage de programmation Swift. Que j'ai découvert lors de l'Apple Programme Fondation et créer l'application \"Fitquest\"."
           },
         ],
       },
@@ -93,7 +93,7 @@ const Skill = () => {
             title: "Vue.js",
             hasNotions: false,
             description:
-              "C'est un framework JavaScript open-source utilisé pour construire des interfaces utilisateur et des applications web monopages. ",
+              "C'est un framework JavaScript open-source utilisé pour construire des interfaces utilisateur et des applications web monopages. Que j'ai appris à utiliser lors de mon stage chez Lota.Cloud. "
           },
           {
             icon: faNodeJs,
@@ -145,7 +145,7 @@ const Skill = () => {
             title: "Figma",
             hasNotions: false,
             description:
-              "Un éditeur de graphiques vectoriels et un outil de prototypage. Il est principalement basé sur le web, avec des fonctionnalités hors ligne supplémentaires activées par des applications de bureau pour macOS et Windows. ",
+              "Un éditeur de graphiques vectoriels et un outil de prototypage. Il est principalement basé sur le web, avec des fonctionnalités hors ligne supplémentaires activées par des applications de bureau pour macOS et Windows. Que j'utilise régulièrement pour le maquettage de mes sites ou de mes applications mobiles",
           },
           {
             icon: faMicrosoft,

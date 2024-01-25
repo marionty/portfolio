@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 const ExperienceSection = ({ experienceData, isMobile }) => {
   const [selectedExperience, setSelectedExperience] = useState(null);
@@ -17,10 +17,10 @@ const ExperienceSection = ({ experienceData, isMobile }) => {
           {experienceData.map((experience, index) => (
             <div
               key={index}
-              className="experience-circle"
+              className={`experience-circle ${selectedExperience === index ? 'rotate' : ''}`}
               onClick={() => handleExperienceClick(index)}
             >
-              <FontAwesomeIcon icon={faPlus} className="plus-icon" />
+              <FontAwesomeIcon icon={faArrowDown} className={`arrow-icon ${selectedExperience === index ? 'rotated' : ''}`} />
             </div>
           ))}
         </div>
@@ -29,10 +29,10 @@ const ExperienceSection = ({ experienceData, isMobile }) => {
           {experienceData.map((experience, index) => (
             <div
               key={index}
-              className="experience-circle"
+              className={`experience-circle ${selectedExperience === index ? 'rotate' : ''}`}
               onClick={() => handleExperienceClick(index)}
             >
-              <FontAwesomeIcon icon={faPlus} className="plus-icon" />
+              <FontAwesomeIcon icon={faArrowDown} className={`arrow-icon ${selectedExperience === index ? 'rotated' : ''}`} />
             </div>
           ))}
         </div>
@@ -47,7 +47,7 @@ const ExperienceSection = ({ experienceData, isMobile }) => {
               <div className="experience-points">
                 {experience.points.map((point, pointIndex) => (
                   <div key={pointIndex} className="experience-point">
-                    <FontAwesomeIcon icon={faPlus} className="plus-icon" />
+                    <FontAwesomeIcon icon={faArrowDown} className={`arrow-icon ${selectedExperience === index ? 'rotated' : ''}`} />
                     {point}
                   </div>
                 ))}

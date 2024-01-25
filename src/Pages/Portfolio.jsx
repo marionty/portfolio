@@ -19,6 +19,13 @@ const Projects = () => {
     setProjets([
       // Exemple de données de projets
       {
+        name: "Projet Mon Portfolio",
+        image: "../images/projetPortfolioReact.png",
+        technologie: "Framework: React js",
+        description: "lorem",
+        githubLink: "https://github.com/votre-utilisateur/nom-du-projet",
+      },
+      {
         name: "Portfolio",
         image: "../images/portfolio-tp-master.png",
         technologie: "Symfony",
@@ -37,6 +44,28 @@ const Projects = () => {
         image: "",
         technologie: "HTM/CSS",
         description: "Découverte HTML/CSS",
+        githubLink: "https://github.com/votre-utilisateur/nom-du-projet",
+      },
+      
+      {
+        name: "Portfolio",
+        image: "",
+        technologie: "React js",
+        description: "lorem",
+        githubLink: "https://github.com/votre-utilisateur/nom-du-projet",
+      },
+      {
+        name: "Portfolio",
+        image: "",
+        technologie: "React js",
+        description: "lorem",
+        githubLink: "https://github.com/votre-utilisateur/nom-du-projet",
+      },
+      {
+        name: "Portfolio",
+        image: "",
+        technologie: "React js",
+        description: "lorem",
         githubLink: "https://github.com/votre-utilisateur/nom-du-projet",
       },
       {
