@@ -1638,6 +1638,8 @@ footer {
   }
 
   /* CONTACT*/
+
+
   .container-contact h3 {
     font-size: 2rem;
   }
@@ -1653,8 +1655,11 @@ footer {
   .form-group {
     display: flex;
     flex-direction: column;
+   
   }
-
+  .container-contact-form .name-group input {
+  width: 22rem;
+}
   .form-group input,
   .form-group textarea {
     width: 90%;
@@ -1662,10 +1667,11 @@ footer {
   .form-group,
   .form-group input,
   .form-group textarea {
-    margin: auto;
+    margin: 0.4rem 0 0.6rem 0;
   }
   .confirm-message p {
     font-size: 2rem;
+    
   }
   /*wrapper-pages*/
   .wrapper-pages .object3 {
