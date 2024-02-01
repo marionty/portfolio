@@ -5,9 +5,9 @@ import "../Styles/Styles.css";
 const NavLinks =(props) => {
   const animateFrom = {opacity: 0, y: -40}
   const animateTo = {opacity: 1, y: -0} 
-
+ 
     return (
-        <ul className="navItems">
+<ul className={`navItems ${props.isFooter ? 'footer-nav' : ''}`}>
         <motion.li
           initial={animateFrom}
           animate={animateTo}

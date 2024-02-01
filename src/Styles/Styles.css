@@ -476,6 +476,8 @@ button.rocket-button img {
   color: #7f00ff;
 }
 .carousel-container {
+  height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -558,7 +560,6 @@ button.rocket-button img {
   position: absolute;
   backface-visibility: hidden;
   transition: transform 0.5s;
-  
 }
 
 .card-content.front {
@@ -567,12 +568,10 @@ button.rocket-button img {
 
 .card-content.back {
   transform: rotateY(180deg);
-  
 }
-.card-content.back p{
-
+.card-content.back p {
   font-size: 0.9rem;
-  text-align:justify;
+  text-align: justify;
   margin: 10px;
 }
 .notions-text {
@@ -710,8 +709,6 @@ button.rocket-button img {
 
 .section-content {
   margin: 10px;
-  
-  
 }
 
 /*expérience*/
@@ -843,10 +840,13 @@ h3 {
   border-color: #7f00ff;
 }
 .project-item {
-  background-color: #bfadd9;
-  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  width: 100%;
   height: 100%;
+  border-radius: 15px;
 }
+
 .container-projects {
   margin-top: 2rem;
   text-align: center;
@@ -855,40 +855,99 @@ h3 {
 }
 
 .project-item h4 {
-  letter-spacing: 2px;
+  letter-spacing: 1.2px;
   font-weight: bold;
   font-size: 2rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
+  margin-top: 5px;
 }
 .project-item h5 {
-  letter-spacing: 2px;
-  text-decoration: underline;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  margin-top: 0.5rem;
+  letter-spacing: 1.2px;
+  color: #bfadd9;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  margin-top: 0.1rem;
 }
 .project-item img {
-  width: 30rem;
+  max-width: 85%; /* Réduire la taille de l'image à 50% de la largeur du parent */
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
-.project-item p {
-  letter-spacing: 1px;
-  font-size: 1.5rem;
-}
-.project-item a {
-  letter-spacing: 1px;
-  color: black;
-  text-decoration: none;
-  margin-top: 1rem;
 
+.project-item.special-image img {
+  height: 150px;
+  width: 70px;
+}
+
+.project-item p {
+  letter-spacing: 0.5px;
   font-size: 1.5rem;
+  text-align: justify;
+  margin: 0 40px 40px 40px;
 }
-.container-projects a:hover {
-  letter-spacing: 1px;
-  color: #7f00ff;
+.github-button {
   text-decoration: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+  background-color: black;
+  width: 240px;
+  z-index: 1000;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
+  position: relative;
+  margin-top: 20px;
+  bottom: 30px; /* Ajustez la valeur selon vos préférences */
+  left: 50%;
+  transform: translateX(-50%);
 }
+
+.github-button:hover {
+  background-color: #7f00ff;
+  cursor: pointer;
+}
+
 .project-item .svg-inline--fa {
   padding-right: 0.5rem;
+}
+
+.mySwiper .swiper-pagination-bullet {
+  background-color: #7f00ff;
+}
+.swiper-wrapper {
+  margin-bottom: 30px;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: #bfadd9;
+  font-weight: bold;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #7f00ff;
+}
+.swiper-button-next::after {
+  margin-right: 20px; /* Ajustez la valeur pour déplacer la flèche vers la droite */
+}
+
+.project-item .top-section {
+  flex: 1;
+  background-color: #bfadd9; /* Fond violet */
+  border-radius: 15px 15px 15px 0; /* Arrondir le coin supérieur */
+}
+
+.project-item .project-details {
+  flex: 1;
+  background-color: #ffffff; /* Fond blanc */
+  border-radius: 15px 0 15px 15px; /* Arrondir le coin inférieur */
+  display: flex;
+  flex-direction: column;
+  padding: 20px; /* Marge intérieure autour du texte */
 }
 
 /* ----------------------------------------------------------------------------------------
@@ -1023,7 +1082,6 @@ footer {
   align-items: center;
   justify-content: space-between;
   background-color: black;
-
 }
 
 .logo-footer {
@@ -1039,7 +1097,7 @@ footer {
   background: none;
 }
 
-.navItems-footer {
+/*.navItems-footer {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -1054,8 +1112,28 @@ footer {
   font-size: 1.25rem;
   letter-spacing: 2px;
   text-transform: capitalize;
+}*/
+.navItems-footer {
+  display: flex;
 }
 
+.navItems-footer li {
+  list-style: none;
+  margin: 0 1.5rem;
+}
+
+.navItems-footer li a {
+  font-size: 2rem;
+  color: white;
+  letter-spacing: 0.1rem;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.navItems-footer li:hover a,
+.links a:hover {
+  color: #7f00ff;
+}
 .logo-footer:hover img,
 .links-footer a:hover {
   -ms-transform: scale(1.5); /* IE 9 */
@@ -1203,8 +1281,9 @@ footer {
     display: flex;
     align-items: center;
 
-    width: 0px;
+    width: 100%;
   }
+
   .MobileNavigation .Hamburger {
     position: absolute;
     right: 0;
@@ -1228,12 +1307,22 @@ footer {
     display: flex;
     justify-content: center;
     width: 75%;
-    margin-right: 3rem;
+    margin-right: 7rem;
   }
   .logo img {
     width: 80px;
     height: 60px;
     margin-top: 8px;
+  }
+  /*footer*/
+
+  footer {
+    padding: 10px;
+  }
+
+  .logo-footer:hover img,
+  .links-footer a:hover {
+    transform: none;
   }
   /*home*/
   .profil {
@@ -1350,7 +1439,10 @@ footer {
   }
   /*carousel hobbie*/
   .carousel-container {
-    margin-bottom: -9rem;
+    position: relative;
+    height: 30%;
+    width: 94%;
+    bottom: 2rem; /* Ajustez cette valeur selon vos besoins */
   }
   .img-hobbie {
     width: 9rem;
@@ -1362,9 +1454,8 @@ footer {
   }
   /*skill experience*/
   .skill-card {
-    width: 120px; /* Ajustez la largeur selon vos préférences pour les écrans plus petits */
-    height: 180px; /* Ajustez la hauteur selon vos préférences pour les écrans plus petits */
-    margin: 2px; /* Ajoutez une marge autour de chaque carte */
+    width: 140px; /* Ajustez la largeur selon vos préférences pour les écrans plus petits */
+    height: 190px; /* Ajustez la hauteur selon vos préférences pour les écrans plus petits */
   }
 
   .card-content .icon {
@@ -1380,26 +1471,28 @@ footer {
     font-size: 0.5rem; /* Ajustez la taille selon vos préférences pour les écrans plus petits */
   }
   .card-content.back {
-    font-size: 0.5rem; /* Ajustez la taille selon vos préférences pour les écrans plus petits */
     margin: -4px;
     box-sizing: border-box;
+  }
+  .card-content.back p {
+    font-size: 0.5rem;
   }
   .notions-text {
     font-size: 1rem;
     color: black;
   }
   .slider {
-    margin: -15px 120px; /* Ajustez la marge autour du carrousel */
+    margin: -15px 100px; /* Ajustez la marge autour du carrousel */
   }
 
   .slider div {
-    margin: 0 0px -10px; /* Ajustez la marge entre chaque élément du carrousel */
+    margin: 0 0px; /* Ajustez la marge entre chaque élément du carrousel */
   }
 
   /*softskills*/
   .softskill {
-    height: auto;
-    margin-bottom: 0;
+    margin-bottom: 0rem;
+    margin-top: -2rem;
   }
   .menu {
     width: 150px; /* Taille du grand cercle en version mobile */
@@ -1436,6 +1529,7 @@ footer {
   .container {
     width: 70%; /* Ajustez la largeur pour la version mobile */
     margin: 0 auto; /* Vous pouvez ajuster la marge si nécessaire */
+    margin-bottom: 70px;
   }
 
   .section-header {
@@ -1453,12 +1547,13 @@ footer {
     flex-direction: column; /* Changez la direction en colonne pour la version mobile */
     align-items: flex-start; /* Alignez les expériences à gauche pour la version mobile */
     margin-left: 100px; /* Réinitialisez la marge à zéro */
+
     height: auto;
   }
 
   .experience-item {
     margin-right: 20px; /* Réinitialisez la marge à zéro */
-    margin-bottom: 90px; /* Ajoutez une marge entre les expériences pour la version mobile */
+    margin-bottom: 70px; /* Ajoutez une marge entre les expériences pour la version mobile */
   }
 
   .experience-title {
@@ -1494,7 +1589,7 @@ footer {
     border-radius: 50%;
     margin-right: 0px; /* Réinitialisez la marge à zéro */
     margin-top: 30px;
-    margin-bottom: 110px; /* Ajoutez une marge entre les cercles pour la version mobile */
+    margin-bottom: 130px; /* Ajoutez une marge entre les cercles pour la version mobile */
     right: 260px;
   }
 
@@ -1507,11 +1602,39 @@ footer {
     width: 100%;
   }
   .input-projects {
-    margin-right: 10%;
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 
   .input-projects input {
-    width: 86%;
+    width: 90%;
+  }
+  .container-projects {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  .project-item h4 {
+    letter-spacing: 1.2px;
+
+    font-size: 1.5rem;
+  }
+  .project-item h5 {
+    letter-spacing: 1.2px;
+
+    font-size: 1rem;
+  }
+  .project-item p {
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+    margin: 0 10px 30px 10px;
+  }
+  .github-button {
+    font-size: 1.5rem;
+    width: 240px;
+  }
+  .mySwiper-button-prev::after,
+  .mySwiper-button-next::after {
+    visibility: hidden;
   }
 
   /* CONTACT*/
@@ -1570,15 +1693,15 @@ footer {
     }
   }
   .wrapper-pages .object5 {
-    height: 20rem;
-    width: 20rem;
+    height: 15rem;
+    width: 15rem;
     left: 22%;
-    top: 80%;
+    top: 100%;
   }
   @keyframes object5 {
     50% {
       left: 20%;
-      top: 76%;
+      top: 90%;
     }
   }
 
@@ -1595,12 +1718,12 @@ footer {
     overflow: hidden;
     height: 20rem;
     width: 20rem;
-    left: 22%;
+    left: 18%;
     top: 120%;
   }
   @keyframes object6 {
     50% {
-      left: 20%;
+      left: 15%;
       top: 118%;
     }
   }
@@ -1615,5 +1738,11 @@ footer {
       left: 46%;
       top: 67%;
     }
+  }
+}
+@media screen and (min-width: 465px) {
+  .mySwiper-button-prev,
+  .mySwiper-button-next {
+    visibility: visible;
   }
 }
