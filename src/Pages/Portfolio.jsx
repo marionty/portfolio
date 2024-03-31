@@ -32,9 +32,16 @@ const Projects = () => {
       {
         name: "Projet: FitQuest",
         image: "../images/projetSwift1.png",
-        technologie: "Langage: SwiftUI",
+        technologie: "ramework: SwiftUI",
         description: "Une application mobile ios, sur le théme du sport, pour répondre à une problèmatique: 'Comment motiver les jeunes à faire plus de sport?', L'application FitQuest allie à la fois le sport, le social, et la gamification (récompenses). L'utilisateur, identifié par un avatar, accéde au 1er écran qui est une map, et visualise les lieux de sport accessibles dans sa locatisation, décide de faire du sport seul ou en groupe et de se défier au différents challenges proposés pour gagner des haltères (points) lui permettant de changer la tenue de son avatar.  " ,
         githubLink: "https://github.com/marionty/MyApplication",
+      },
+      {
+        name: "Projet: Do It Your plan",
+        image: "../images/projetSwift2.png",
+        technologie: "Framework: SwiftUI",
+        description: "Une application mobile ios, sur le théme de la créativité, pour répondre à une problèmatique: 'Comment aider les adultes actifs à réaliser et aboutir leurs projets DIY', L'application Do it Your Plan permet aux utilisateurs de créer un projet DIY, étapes par étapes, à chaques étapes finalisées ils gagnent des points lui permettant de débloquer des accessoires pour son avatar, il peut accéder à sa liste de projets en cours, ainsi qu'à son planning pour sa gestion de début et de fin de projets et sa bibliothéques, ou il pourra répertorier toutes ses inspirations, vidéos. " ,
+       
       },
       {
         name: "Projet: La liane bleue",
@@ -186,7 +193,7 @@ const Projects = () => {
       >
           {projetsFiltres.map((projet, index) => (
             <SwiperSlide key={index}>
-            <div className={`project-item ${index === 1 ? 'special-image' : ''}`}>
+            <div className={`project-item ${index === 1 || index === 2 ? 'special-image' : ''}`}>
             <div className="top-section">
               {/* Image du projet */}
       <img src={projet.image} alt="" />

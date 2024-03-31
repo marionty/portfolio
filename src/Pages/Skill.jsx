@@ -170,7 +170,8 @@ const Skill = () => {
           </>
         ),
         points: [
-          "- Découverte des métiers du Web - Recherche de formation",
+          "- Découverte des métiers du Web",
+          "- Recherche de formation",
           "- Initiation au coding",
           "- Création de site internet",
         ],
@@ -187,12 +188,12 @@ const Skill = () => {
           </>
         ),
         points: [
-          " Développer la partie front-end d’une application web ou web mobile en intégrant les recommandations de sécurité",
+          "Développer la partie front-end d’une application web ou web mobile en intégrant les recommandations de sécurité",
           "- Maquetter une application",
           "- Réaliser une interface utilisateur web statique et adaptable.",
           "- Développer une interface utilisateur web dynamique.",
           "- Réaliser une interface utilisateur avec une solution de gestion de contenu. ",
-          " Développer la partie back-end d’une application web ou web mobile en intégrant les recommandations de sécurité",
+          "Développer la partie back-end d’une application web ou web mobile en intégrant les recommandations de sécurité",
           "- Créer une base de données.",
           "- Développer les composants d’accès aux données.",
           "- Développer la partie back-end d’une application web ou web mobile.",
@@ -220,15 +221,15 @@ const Skill = () => {
           <>
             <span>Février - Mars 2024 </span><strong>&rarr;
             
-              Apple Foundation Program - Développement mobile iOS à Simplon
+              Apple Foundation Program Extended - Développement mobile iOS à Simplon
             </strong>
           </>
         ),
         points: [
-          "- Mener une investigation du domaine choisi, identifier des besoins, concevoir une solution",
-          "- Maquetter l’interface d’une application mobile iOS avec Figma",
-          "- Bases de Swift et SwiftUI",
-          "- Développement du prototype en groupe - Présentations finales en groupe",
+          "- Mener une investigation du domaine choisi, identifier des besoins, concevoir une solution" ,
+"- Maquetter l’interface d’une application mobile iOS avec Figma",
+"- Développer une application mobile iOS (langage Swift et son framework SwiftUI)",
+"- Présentation synthétique d'un projet à l'oral devant un jury de professionnels",
         ],
       },
     ]);

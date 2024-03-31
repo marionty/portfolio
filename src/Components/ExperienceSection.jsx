@@ -47,7 +47,7 @@ const ExperienceSection = ({ experienceData, isMobile }) => {
               <div className="experience-points">
                 {experience.points.map((point, pointIndex) => (
                   <div key={pointIndex} className="experience-point">
-                    <FontAwesomeIcon icon={faArrowDown} className={`arrow-icon ${selectedExperience === index ? 'rotated' : ''}`} />
+                   
                     {point}
                   </div>
                 ))}

@@ -423,11 +423,9 @@ nav {
   animation: rocketAnimation 3s linear forwards;
 }
 .rocket-button:hover img {
-  filter: brightness(1.2); /* Rendre l'image légèrement transparente au survol */
+  filter: brightness(1.2);
   transform: scale(1.05);
 }
-
-
 
 .rocket-button {
   background: none;
@@ -671,7 +669,9 @@ button.rocket-button img {
   font-size: 2em;
   transition: transform 1.25s;
 }
-
+.toggle:hover img {
+  transform: scale(1.05);
+}
 .menu.active .toggle {
   transform: rotate(360deg) translateY(70px);
   transform-origin: center;
@@ -754,17 +754,13 @@ button.rocket-button img {
   margin-top: 10px; /* Ajouter une marge en haut pour l'espace entre les éléments */
   text-align: left;
 }
-
-.experience-points {
-  display: flex;
-  flex-direction: column;
-}
-
 .experience-point {
-  display: flex;
-  align-items: center;
-  color: black;
+  margin-bottom: 10px; /* Espace entre les points */
+  line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+  text-indent: 0; 
+  border-bottom: 1px solid #eee; /* Ligne séparatrice pour chaque point */
 }
+
 .arrow-icon {
   color: white; /* Couleur blanche */
   font-size: 1.2rem; /* Ajustez la taille de la police selon vos préférences */
@@ -794,12 +790,22 @@ button.rocket-button img {
   display: inline-block;
   position: relative;
   top: -22px;
-  margin-right: 260px;
+  margin-right: 80px;
   margin-left: 250px;
   cursor: pointer;
 }
 .experience-circle:hover {
   background-color: #7f00ff;
+}
+.expand-button {
+  font-size: 24px; /* Ajustez la taille selon vos besoins */
+  cursor: pointer; /* Ajoute un indicateur visuel que c'est cliquable */
+  padding: 5px; /* Ajoute un peu d'espace autour pour faciliter le clic */
+  width: 24px; /* Spécifie une largeur pour l'élément */
+  height: 24px; /* Spécifie une hauteur pour l'élément */
+  line-height: 24px; /* Centre le texte verticalement */
+  text-align: center; /* Centre le texte horizontalement */
+  display: inline-block; /* Permet à l'élément de respecter les propriétés de taille */
 }
 /* ----------------------------------------------------------------------------------------
 * PORTFOLIO/my projects
@@ -831,7 +837,7 @@ h3 {
   border: 1px solid #ccc;
   letter-spacing: 2px;
   font-size: 1.5rem;
-  padding-left: 10px; /* Ajoutez une marge à gauche du texte dans l'input */
+  padding-left: 10px;
   margin-right: 10px;
 }
 
@@ -889,6 +895,7 @@ h3 {
   letter-spacing: 0.5px;
   font-size: 1.5rem;
   text-align: justify;
+  hyphens: auto;
   margin: 0 40px 40px 40px;
 }
 .github-button {
@@ -907,7 +914,7 @@ h3 {
   box-shadow: 0 15px 10px rgba(0, 0, 0, 0.4);
   position: relative;
   margin-top: 20px;
-  bottom: 30px; /* Ajustez la valeur selon vos préférences */
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -1041,9 +1048,9 @@ article {
   margin-left: 2rem;
 }
 .input-with-focus {
-  outline: none; /* Supprime le contour par défaut lorsque l'input a le focus */
-  border: 2px solid #7f00ff; /* Ajoute un contour violet de 2px */
-  border-radius: 5px; /* Facultatif : arrondit les bords du contour */
+  outline: none;
+  border: 2px solid #7f00ff;
+  border-radius: 5px;
 }
 .form-group textarea {
   width: 49rem;
@@ -1452,7 +1459,7 @@ footer {
     position: relative;
     height: 30%;
     width: 94%;
-    bottom: 2rem; /* Ajustez cette valeur selon vos besoins */
+    bottom: 2rem;
   }
   .img-hobbie {
     width: 9rem;
@@ -1464,21 +1471,21 @@ footer {
   }
   /*skill experience*/
   .skill-card {
-    width: 140px; /* Ajustez la largeur selon vos préférences pour les écrans plus petits */
-    height: 190px; /* Ajustez la hauteur selon vos préférences pour les écrans plus petits */
+    width: 140px;
+    height: 190px;
   }
 
   .card-content .icon {
-    font-size: 3rem; /* Ajustez la taille selon vos préférences pour les écrans plus petits */
+    font-size: 3rem;
     margin-bottom: 6px;
   }
 
   .card-content h4 {
-    font-size: 1.5rem; /* Ajustez la taille selon vos préférences pour les écrans plus petits */
+    font-size: 1.5rem;
   }
 
   .card-content h5 {
-    font-size: 0.5rem; /* Ajustez la taille selon vos préférences pour les écrans plus petits */
+    font-size: 0.5rem;
   }
   .card-content.back {
     margin: -4px;
@@ -1557,7 +1564,6 @@ footer {
     flex-direction: column; /* Changez la direction en colonne pour la version mobile */
     align-items: flex-start; /* Alignez les expériences à gauche pour la version mobile */
     margin-left: 100px; /* Réinitialisez la marge à zéro */
-
     height: auto;
   }
 
@@ -1588,7 +1594,6 @@ footer {
     height: auto;
     position: absolute;
     left: 70px; /* Ajustez la position à gauche */
-
     pointer-events: none; /* Désactive les événements pointer pour permettre aux clics de passer à travers */
   }
 
@@ -1600,7 +1605,7 @@ footer {
     margin-right: 0px; /* Réinitialisez la marge à zéro */
     margin-top: 30px;
     margin-bottom: 130px; /* Ajoutez une marge entre les cercles pour la version mobile */
-    right: 260px;
+    right: 180px;
   }
 
   .horizontal-line {
