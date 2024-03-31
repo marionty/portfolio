@@ -70,12 +70,13 @@ const Skill = () => {
               "Je l'ai utilisé pour concevoir des sites web interactifs. Les fonctions JavaScript m'ont permis d'améliorer l'expérience utilisateur d'un site web, comme l'affichage d'animations et de cartes interactives. Par exemple un carrousel d'images, un menu déroulant « Cliquer pour afficher » ou le changement dynamique de la couleur des éléments d'une page web. ",
           },
           {
-            icon: faSwift,
-            title: "SwiftUI",
+            icon: faPhp,
+            title: "PHP",
             hasNotions: true,
             description:
-              "Cadre d'application graphique permettant de créer des interfaces utilisateur pour iOS, iPadOS, watchOS, tvOS, visionOS et macOS, développé par Apple Inc. pour le langage de programmation Swift. Que j'ai découvert lors de l'Apple Programme Fondation et créer l'application \"Fitquest\"."
+              "Principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP. PHP est un langage impératif orienté objet. Il s'agit d'un langage de script interprété côté serveur.",
           },
+          
         ],
       },
       {
@@ -96,19 +97,20 @@ const Skill = () => {
               "C'est un framework JavaScript open-source utilisé pour construire des interfaces utilisateur et des applications web monopages. Que j'ai appris à utiliser lors de mon stage chez Lota.Cloud. "
           },
           {
+            icon: faSwift,
+            title: "SwiftUI",
+            hasNotions: true,
+            description:
+              "Cadre d'application graphique permettant de créer des interfaces utilisateur pour iOS, iPadOS, watchOS, tvOS, visionOS et macOS, développé par Apple Inc. pour le langage de programmation Swift. Que j'ai découvert lors de l'Apple Programme Fondation et créer l'application \"Fitquest\"."
+          },
+          {
             icon: faNodeJs,
             title: "Node js",
             hasNotions: true,
             description:
               "Permettant de créer des applications rapides et évolutives côté serveur et en réseau. Par exemple pour mon projet de commande de burger, le panier de paiement, le formulaire de contact, et la gestion utilisateurs.",
           },
-          {
-            icon: faPhp,
-            title: "PHP",
-            hasNotions: true,
-            description:
-              "Principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP. PHP est un langage impératif orienté objet. Il s'agit d'un langage de script interprété côté serveur.",
-          },
+          
           {
             icon: faSymfony,
             title: "Symfony",
@@ -162,7 +164,7 @@ const Skill = () => {
       {
         title: (
           <>
-            <span>Novembre - décembre 2022 </span>
+            <span>Novembre - Décembre 2022 </span>
             <strong>&rarr;
            Programme BTech à Euratechnologie</strong>
           </>
@@ -176,7 +178,7 @@ const Skill = () => {
       {
         title: (
           <>
-            <span>Août - octobre 2023 </span>
+            <span>Août - Octobre 2023 </span>
             <strong>&rarr;
            
               Stage de Développeuse web et web mobile chez Lota.cloud, Alacrité
@@ -200,7 +202,23 @@ const Skill = () => {
       {
         title: (
           <>
-            <span>Novembre - décembre 2023 </span><strong>&rarr;
+            <span>Novembre - Décembre 2023 </span><strong>&rarr;
+            
+              Apple Foundation Program - Développement mobile iOS à Simplon
+            </strong>
+          </>
+        ),
+        points: [
+          "- Mener une investigation du domaine choisi, identifier des besoins, concevoir une solution",
+          "- Maquetter l’interface d’une application mobile iOS avec Figma",
+          "- Bases de Swift et SwiftUI",
+          "- Développement du prototype en groupe - Présentations finales en groupe",
+        ],
+      },
+      {
+        title: (
+          <>
+            <span>Février - Mars 2024 </span><strong>&rarr;
             
               Apple Foundation Program - Développement mobile iOS à Simplon
             </strong>

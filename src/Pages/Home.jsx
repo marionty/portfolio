@@ -62,7 +62,7 @@ export default function Home() {
             </h1>
             <div className="button-profil">
               <a
-                href="/cvMT.pdf"
+                href="/images/CV TytgatM Alternance.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 download
@@ -125,7 +125,7 @@ export default function Home() {
                       <br />
                       <span className="purple-text">Actuellement, je suis à la recherche d'une entreprise en <strong>alternance</strong> pour un titre de <strong>Concepteur Développeur d'Applications</strong> bac+4, dans le cadre d'un <strong>contrat de professionnalisation</strong> d'une durée de <strong>15 mois.</strong>
                       Le rythme sera de 3 semaines en entreprise et 1 semaine en formation à la Wild Code School. 
-                      La rentrée est prévue au plus tard le <strong>26 février</strong>. Ayant passé avec succès les examens d'entrée, je suis prête à relever de nouveaux défis et à continuer à explorer les vastes étendues du <strong>monde du web</strong>.</span>
+                      La rentrée est prévue au plus tard le <strong>pour septembre</strong>. Ayant passé avec succès les examens d'entrée, je suis prête à relever de nouveaux défis et à continuer à explorer les vastes étendues du <strong>monde du web</strong>.</span>
                     <br />
                     <br />
                       Alors, attachez vos ceintures et préparez-vous à explorer

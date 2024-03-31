@@ -422,6 +422,12 @@ nav {
 #rocket_dummy.started .rocket_body {
   animation: rocketAnimation 3s linear forwards;
 }
+.rocket-button:hover img {
+  filter: brightness(1.2); /* Rendre l'image légèrement transparente au survol */
+  transform: scale(1.05);
+}
+
+
 
 .rocket-button {
   background: none;
@@ -1403,6 +1409,7 @@ footer {
   .button-profil {
     left: 0.5rem;
   }
+
   .about-section {
     margin: 0rem;
   }
@@ -1419,9 +1426,12 @@ footer {
 
   .infoabout__soustitle,
   .infoabout__content {
-    text-align: justify;
-    letter-spacing: 1px;
-    font-size: 1.3rem;
+    text-align: left;
+    hyphens: auto;
+    word-wrap: break-word;
+    letter-spacing: normal;
+    line-height: 1.5;
+    font-size: calc(12px + 0.5vw);
   }
   .rocket-container {
     width: 90%;
@@ -1639,7 +1649,6 @@ footer {
 
   /* CONTACT*/
 
-
   .container-contact h3 {
     font-size: 2rem;
   }
@@ -1655,11 +1664,10 @@ footer {
   .form-group {
     display: flex;
     flex-direction: column;
-   
   }
   .container-contact-form .name-group input {
-  width: 22rem;
-}
+    width: 22rem;
+  }
   .form-group input,
   .form-group textarea {
     width: 90%;
@@ -1671,7 +1679,6 @@ footer {
   }
   .confirm-message p {
     font-size: 2rem;
-    
   }
   /*wrapper-pages*/
   .wrapper-pages .object3 {
