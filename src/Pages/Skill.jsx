@@ -1,6 +1,6 @@
 import "../Styles/Styles.css";
 import ScrollIndicator from "../Components/ScrollIndicator";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 // Importation des icônes utilisées
 import {
   faHtml5,

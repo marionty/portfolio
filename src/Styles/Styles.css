@@ -575,8 +575,8 @@ button.rocket-button img {
 }
 .card-content.back p {
   font-size: 0.9rem;
-  text-align: justify;
-  margin: 10px;
+  text-align: left;
+  margin: 20px;
 }
 .notions-text {
   position: absolute;
