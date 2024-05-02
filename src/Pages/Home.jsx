@@ -180,7 +180,7 @@ export default function Home() {
             )}
 
             <button className="infoabout__button" onClick={handleButtonClick}>
-              {showFullText ? "Réduire" : "Lire la suite"}
+              {showFullText ? "View less" : "View more"}
             </button>
           </div>
         </div>

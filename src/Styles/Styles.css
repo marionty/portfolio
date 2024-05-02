@@ -683,130 +683,172 @@ button.rocket-button img {
   width: 330px;
   height: 330px;
 }
-/*education sur page educationSection*/
-
-.container {
-  width: 48%;
-  margin: 0 auto 80px;
-}
-
-.section {
-  margin-bottom: 10px;
-  border: 2px solid #7f00ff;
-  border-radius: 8px;
-}
-
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: white;
-}
-
-.section-header.active {
-  background-color: #bfadd9;
-}
-
-.expand-button {
-  cursor: pointer;
-  padding: 5px;
-}
-
-.section-content {
-  margin: 10px;
-}
 
 /*expérience*/
-
-.experience-grid {
+.experience-container {
   display: flex;
-  flex-direction: row;
-
-  margin-left: 70px;
-  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
 
-.experience-item {
-  flex: 1; /* Utiliser la propriété flex pour répartir l'espace de manière égale entre les éléments */
-  margin-right: 80px; /* Ajuster la marge entre les éléments selon vos préférences */
-  margin-bottom: 80px;
+.experience-card {
+  width: 350px;
+  height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px -5px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  overflow: hidden;
+  position: relative;
+}
+
+.experience-date {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.image-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.experience-image {
+  height: 90px; /* Fixed height for all images */
+  width: 60%; /* Full width to maintain consistency */
+  display: flex;
+  justify-content: center; /* Centers image horizontally */
+  align-items: center; /* Centers image vertically */
+  overflow: hidden;
 }
 
 .experience-title {
-  flex-direction: column;
-
-  cursor: pointer;
-  color: black;
-  border: 2px solid #7f00ff;
-  padding: 10px;
-  border-radius: 8px;
-  align-items: center; /* Centrer les éléments horizontalement */
-  text-align: center; /* Centrer le texte à l'intérieur */
+  margin-bottom: 10px; /* Space below the title */
+  font-size: 1.25em; /* Increase font size */
+  font-weight: bold; /* Optional: make the title bold */
+  color: #7f00ff;
+  
 }
 
-.experience-title span {
-  display: block; /* Faire en sorte que le span occupe toute la largeur */
-}
-
-.experience-title strong {
-  display: block; /* Faire en sorte que la strong occupe toute la largeur */
-  margin-top: 10px; /* Ajouter une marge en haut pour l'espace entre les éléments */
-  text-align: left;
-}
-.experience-point {
-  margin-bottom: 10px; /* Espace entre les points */
-  line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
-  text-indent: 0; 
-  border-bottom: 1px solid #eee; /* Ligne séparatrice pour chaque point */
-}
-
-.arrow-icon {
-  color: white; /* Couleur blanche */
-  font-size: 1.2rem; /* Ajustez la taille de la police selon vos préférences */
-  margin-left: 17px;
-  margin-top: 15px; /* Ajustez la marge à droite pour l'espacement */
-}
-
-.arrow-icon.rotate {
-  transition: transform 0.3s ease-in-out;
-}
-
-.arrow-icon.rotated {
-  transform: rotate(180deg);
-}
-
-.horizontal-line {
-  border-top: 1px solid #7f00ff;
-  width: 100%;
-  margin-top: 40px;
-  margin-bottom: 30px;
-}
-.experience-circle {
-  width: 50px;
-  height: 50px;
-  background-color: #bfadd9;
-  border-radius: 50%;
-  display: inline-block;
-  position: relative;
-  top: -22px;
-  margin-right: 80px;
-  margin-left: 250px;
-  cursor: pointer;
-}
-.experience-circle:hover {
+.button-view-more {
+  width: 70%;
+  padding: 10px 20px;
   background-color: #7f00ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  align-self: center; 
+  margin-bottom: 10px;
+  font-size: 1rem;
 }
-.expand-button {
-  font-size: 24px; /* Ajustez la taille selon vos besoins */
-  cursor: pointer; /* Ajoute un indicateur visuel que c'est cliquable */
-  padding: 5px; /* Ajoute un peu d'espace autour pour faciliter le clic */
-  width: 24px; /* Spécifie une largeur pour l'élément */
-  height: 24px; /* Spécifie une hauteur pour l'élément */
-  line-height: 24px; /* Centre le texte verticalement */
-  text-align: center; /* Centre le texte horizontalement */
-  display: inline-block; /* Permet à l'élément de respecter les propriétés de taille */
+
+.button-view-more:hover {
+  background-color: #bfadd9;
 }
+.experience-description-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay for better readability */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center content */
+  padding: 20px; /* Padding around the text */
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: left; /* Aligns text to the left */
+}
+
+.experience-card:hover .experience-description-overlay,
+.experience-card:focus-within .experience-description-overlay {
+  opacity: 1;
+}
+
+.experience-description-overlay p {
+  margin: 5px 0; /* Reduced vertical margin for compact appearance */
+  line-height: 1.5; /* Line height for better readability */
+}
+
+/*education sur page educationSection*/
+.container {
+  display: flex; /* Aligns the circles horizontally */
+  justify-content: center; /* Centers the circles within the container */
+  align-items: center; /* Vertically centers the circles */
+  flex-wrap: wrap; /* Allows wrapping if the screen is too small */
+  gap: 40px; /* Space between circles */
+  margin-bottom: 80px;
+}
+
+.section-header {
+    width: 430px; /* Augmenter la taille des cercles */
+    height: 430px; /* Augmenter la taille des cercles */
+    background-size: 60%;
+  border-radius: 50%;
+  background-color: #fff7e6; 
+  background-image: url('../../public/images/couronneDiplome.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative; 
+  overflow: hidden; 
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); 
+}
+
+.section-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  visibility: hidden;
+  padding: 60px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.section-header:hover .section-content,
+.section-header:focus .section-content {
+  opacity: 1;
+  visibility: visible;
+}
+.section-title {
+  font-size: 22px; /* Larger font size for title */
+  color: #333; /* Color for better visibility on light background */
+  z-index: 1; /* Ensures title is above the image */
+  text-align: center; /* Centrer le texte */
+  margin-bottom: 20px; /* Ajouter un espace entre le titre et la date */
+}
+
+.section-date {
+  font-size: 16px; /* Smaller font size for date */
+  color: #333;
+  z-index: 1;
+  text-align: center; /* Centrer le texte */
+}
+
+
+
 /* ----------------------------------------------------------------------------------------
 * PORTFOLIO/my projects
 * ----------------------------------------------------------------------------------------
@@ -1544,74 +1586,77 @@ footer {
   }
   /*education*/
   .container {
-    width: 70%; /* Ajustez la largeur pour la version mobile */
-    margin: 0 auto; /* Vous pouvez ajuster la marge si nécessaire */
-    margin-bottom: 70px;
-  }
-
-  .section-header {
-    padding: 5px; /* Ajustez la marge intérieure pour la version mobile */
-  }
-
-  .section-content {
-    margin-left: 10px; /* Ajustez la marge de gauche pour la version mobile */
-  }
-
-  /* Expérience Section Styles */
-
-  .experience-grid {
     display: flex;
-    flex-direction: column; /* Changez la direction en colonne pour la version mobile */
-    align-items: flex-start; /* Alignez les expériences à gauche pour la version mobile */
-    margin-left: 100px; /* Réinitialisez la marge à zéro */
-    height: auto;
+    flex-direction: column; /* Affiche les cercles en colonne sur les petits écrans */
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px; /* Réduire la marge inférieure */
+  }
+  
+  .section-header {
+    width: 350px; /* Réduire la taille des cercles pour les petits écrans */
+    height: 350px; /* Réduire la taille des cercles pour les petits écrans */
+    background-size: 70%; /* Ajuster la taille de l'image */
+  }
+  
+  .section-content {
+padding:50px;
+    font-size: 13px;;
+  }
+  
+  .section-title {
+    font-size: 1.25rem; /* Réduire la taille de la police pour les petits écrans */
+    margin-bottom: 10px; /* Réduire l'espace entre le titre et la date */
+  }
+  
+  .section-date {
+    font-size: 1rem; /* Réduire la taille de la police pour les petits écrans */
   }
 
-  .experience-item {
-    margin-right: 20px; /* Réinitialisez la marge à zéro */
-    margin-bottom: 70px; /* Ajoutez une marge entre les expériences pour la version mobile */
+  
+  /*expériences*/
+  .experience-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures cards are centered */
+    width: 100%; /* Full width */
+    padding: 10px 0; /* Padding for top and bottom only */
+  }
+
+  .experience-card {
+    width: 280px; /* Adjusted width for mobile */
+    height: 450px; /* Minimum height */
+    margin: 20px auto; /* Margin for top, bottom, and auto for horizontal centering */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .image-title-container {
+    margin-top: 80px; /* Adds a top margin to push it down */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  
+  .experience-image {
+    max-width: 100%; /* Ensures the image does not exceed container width */
+    max-height: 100%; /* Ensures the image fits within the height */
   }
 
   .experience-title {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    color: black;
+    margin-top: 10px; /* Space between the image and the title */
   }
 
-  .experience-points {
-    display: flex;
-    flex-direction: column; /* Changez la direction en colonne pour les points */
+  .button-view-more {
+    padding: 10px 20px;
+    margin-top: auto; /* Pushes the button to the bottom */
   }
-
-  .experience-point {
-    display: flex;
-    align-items: center;
-    color: black;
+  .experience-description-overlay {
+    font-size: 14px; /* Adjust font size if necessary */
+    line-height: 1.3; /* Reduced line-height for closer lines */
+   
   }
-  .vertical-line {
-    border-left: 1px solid #7f00ff;
-    height: auto;
-    position: absolute;
-    left: 70px; /* Ajustez la position à gauche */
-    pointer-events: none; /* Désactive les événements pointer pour permettre aux clics de passer à travers */
-  }
-
-  .experience-circle {
-    width: 20px; /* Réduisez la taille du cercle pour la version mobile */
-    height: 20px; /* Réduisez la taille du cercle pour la version mobile */
-    background-color: #bfadd9;
-    border-radius: 50%;
-    margin-right: 0px; /* Réinitialisez la marge à zéro */
-    margin-top: 30px;
-    margin-bottom: 130px; /* Ajoutez une marge entre les cercles pour la version mobile */
-    right: 180px;
-  }
-
-  .horizontal-line {
-    display: none;
-  }
-
   /*portfolio/my project*/
   .project-item img {
     width: 100%;

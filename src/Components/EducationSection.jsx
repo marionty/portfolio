@@ -1,4 +1,4 @@
-// EducationSection.js
+
 import React, { useState, useEffect } from "react";
 
 const EducationSection = ({ educationData, setEducationData }) => {
@@ -19,9 +19,10 @@ const EducationSection = ({ educationData, setEducationData }) => {
     if (educationData.length === 0) {
       setEducationData([
         {
+          date: "Février - Novembre 2023",
           title: (
             <>
-              <span>Février - Novembre 2023</span> <strong>&rarr;</strong>{" "}
+              
               <strong>
                 Certification du titre professionnel Développeur web et web
                 mobile
@@ -39,9 +40,9 @@ const EducationSection = ({ educationData, setEducationData }) => {
           
         },
         {
+          date: "2019 - 2021",
           title: (
           <>
-              <span>2019 - 2021</span> <strong>&rarr;</strong>{" "}
               <strong>
               BTS Support à l'Action Managériale
               </strong>
@@ -54,9 +55,10 @@ const EducationSection = ({ educationData, setEducationData }) => {
           ),
         },
         {
+          date: "2005 - 2007",
           title: (
             <>
-                <span>2005 - 2007</span> <strong>&rarr;</strong>{" "}
+              
                 <strong>
                 BAC Sciences Médico Sociales
                 </strong>
@@ -64,14 +66,16 @@ const EducationSection = ({ educationData, setEducationData }) => {
         ),
           
         content: (
-          <>
+          <div>
+          <p>
             Le programme de la section <strong>Sciences Médico-Sociales</strong> permet d'acquérir les connaissances et savoir-faire nécessaires pour :
-            <ul>
-              <li>préparer les concours d'entrée dans le <strong>secteur paramédical</strong> (infirmier, orthophoniste, ambulancier, ergothérapeute, podologue, pédicure...)</li>
-              <li>occuper un poste de <strong>secrétariat médical</strong> ou de secrétariat scientifique</li>
-              <li>poursuivre des études à l'université dans le <strong>secteur scientifique, sociologique, social.</strong></li>
-            </ul>
-          </>
+          </p>
+          <ul>
+            <li>préparer les concours d'entrée dans le <strong>secteur paramédical</strong> (infirmier, orthophoniste, ambulancier, ergothérapeute, podologue, pédicure...)</li>
+            <li>occuper un poste de <strong>secrétariat médical</strong> ou de secrétariat scientifique</li>
+            <li>poursuivre des études à l'université dans le <strong>secteur scientifique, sociologique, social.</strong></li>
+          </ul>
+        </div>
          ),
         },
       ]);
@@ -84,22 +88,23 @@ const EducationSection = ({ educationData, setEducationData }) => {
       {educationData.map((section, index) => (
         <div key={index} className="section">
           <div
-            className={`section-header ${expandedSections[index] ? "active" : ""}`}
+            className={`section-header ${expandedSections[index] ? 'active' : ''}`}
+            onClick={() => toggleSection(index)}
           >
-            <div>{section.title}</div>
-            <div
-              onClick={() => toggleSection(index)}
-              className="expand-button"
-            >
-              {expandedSections[index] ? "-" : "+"}
-            </div>
+            <div className="section-title">{section.title}</div>
+            <div className="section-date">{section.date}</div>
+            
+            {expandedSections[index] && (
+              <div className={`section-content ${expandedSections[index] ? 'show' : ''}`}>
+                {section.content}
+              </div>
+            )}
           </div>
-          {expandedSections[index] && (
-            <div className="section-content">{section.content}</div>
-          )}
         </div>
       ))}
     </div>
+
+  
   );
 };
 

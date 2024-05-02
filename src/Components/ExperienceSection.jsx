@@ -1,5 +1,42 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+
+const ExperienceSection = ({ experienceData, isMobile }) => {
+  const [openDescriptionIndex, setOpenDescriptionIndex] = useState(null);
+
+  const toggleDescription = index => {
+    setOpenDescriptionIndex(openDescriptionIndex === index ? null : index);
+  };
+
+  const containerStyle = isMobile ? 'experience-container-mobile' : 'experience-container';
+
+  return (
+    <div className={containerStyle}>
+    {experienceData.map((exp, index) => (
+      <div key={index} className="experience-card">
+        <div className="experience-date">{exp.date}</div>
+        <div className="image-title-container">
+    <img src={exp.image} alt="Experience" className="experience-image" />
+    <h6 className="experience-title">{exp.title}</h6>
+  </div>
+        <button className="button-view-more" onClick={() => toggleDescription(index)}>View More</button>
+        {openDescriptionIndex === index && (
+          <div className="experience-description-overlay">
+            {exp.description.map((desc, i) => <p key={i}>{desc}</p>)}
+          </div>
+        )}
+      </div>
+    ))}
+  </div>
+  
+  );
+};
+
+export default ExperienceSection;
+
+/*import React, { useState } from 'react';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 const ExperienceSection = ({ experienceData, isMobile }) => {
@@ -47,7 +84,6 @@ const ExperienceSection = ({ experienceData, isMobile }) => {
               <div className="experience-points">
                 {experience.points.map((point, pointIndex) => (
                   <div key={pointIndex} className="experience-point">
-                   
                     {point}
                   </div>
                 ))}
@@ -60,4 +96,4 @@ const ExperienceSection = ({ experienceData, isMobile }) => {
   );
 };
 
-export default ExperienceSection;
+export default ExperienceSection;*/

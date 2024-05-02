@@ -159,80 +159,65 @@ const Skill = () => {
         ],
       },
     ]);
-
-    setExperienceData([
+    setExperienceData( [
       {
-        title: (
-          <>
-            <span>Novembre - Décembre 2022 </span>
-            <strong>&rarr;
-           Programme BTech à Euratechnologie</strong>
-          </>
-        ),
-        points: [
-          "- Découverte des métiers du Web",
-          "- Recherche de formation",
-          "- Initiation au coding",
-          "- Création de site internet",
+        date: "Novembre - Décembre 2022",
+        title: "Programme BTech à Euratechnologie",
+        
+        image: "/images/logoBTech.jpg",
+        description: [
+          "Découverte des métiers du Web",
+          "Recherche de formation",
+          "Initiation au coding",
+          "Création de site internet",
         ],
       },
       {
-        title: (
-          <>
-            <span>Août - Octobre 2023 </span>
-            <strong>&rarr;
-           
-              Stage de Développeuse web et web mobile chez Lota.cloud, Alacrité
-              France
-            </strong>
-          </>
-        ),
-        points: [
+        date: "Août - Octobre 2023",
+        title: "Stage de Développeuse web et web mobile chez Lota.cloud, Alacrité France",
+        
+        image: "/images/logoLotaCloud.jpg",
+        description: [
           "Développer la partie front-end d’une application web ou web mobile en intégrant les recommandations de sécurité",
-          "- Maquetter une application",
-          "- Réaliser une interface utilisateur web statique et adaptable.",
-          "- Développer une interface utilisateur web dynamique.",
-          "- Réaliser une interface utilisateur avec une solution de gestion de contenu. ",
+          "Maquetter une application",
+          "Réaliser une interface utilisateur web statique et adaptable.",
+          "Développer une interface utilisateur web dynamique.",
+          "Réaliser une interface utilisateur avec une solution de gestion de contenu.",
           "Développer la partie back-end d’une application web ou web mobile en intégrant les recommandations de sécurité",
-          "- Créer une base de données.",
-          "- Développer les composants d’accès aux données.",
-          "- Développer la partie back-end d’une application web ou web mobile.",
-          "- Élaborer et mettre en œuvre des composants dans une application de gestion de contenu.",
+          "Créer une base de données.",
+          "Développer les composants d’accès aux données.",
+          "Développer la partie back-end d’une application web ou web mobile.",
+          "Élaborer et mettre en œuvre des composants dans une application de gestion de contenu.",
         ],
       },
       {
-        title: (
-          <>
-            <span>Novembre - Décembre 2023 </span><strong>&rarr;
-            
-              Apple Foundation Program - Développement mobile iOS à Simplon
-            </strong>
-          </>
-        ),
-        points: [
-          "- Mener une investigation du domaine choisi, identifier des besoins, concevoir une solution",
-          "- Maquetter l’interface d’une application mobile iOS avec Figma",
-          "- Bases de Swift et SwiftUI",
-          "- Développement du prototype en groupe - Présentations finales en groupe",
+        date: "Novembre - Décembre 2023",
+        title: "Apple Foundation Program - Développement mobile iOS à Simplon",
+        
+        image: "/images/logoSimplon.jpg",
+        description: [
+          "Mener une investigation du domaine choisi, identifier des besoins, concevoir une solution",
+          "Maquetter l’interface d’une application mobile iOS avec Figma",
+          "Bases de Swift et SwiftUI",
+          "Développement du prototype en groupe - Présentations finales en groupe",
         ],
       },
       {
-        title: (
-          <>
-            <span>Février - Mars 2024 </span><strong>&rarr;
-            
-              Apple Foundation Program Extended - Développement mobile iOS à Simplon
-            </strong>
-          </>
-        ),
-        points: [
-          "- Mener une investigation du domaine choisi, identifier des besoins, concevoir une solution" ,
-"- Maquetter l’interface d’une application mobile iOS avec Figma",
-"- Développer une application mobile iOS (langage Swift et son framework SwiftUI)",
-"- Présentation synthétique d'un projet à l'oral devant un jury de professionnels",
+        date: "Février - Mars 2024",
+        title: "Apple Foundation Program Extended - Développement mobile iOS à Simplon",
+        
+        image: "/images/logoSimplon.jpg",
+        description: [
+          "Mener une investigation du domaine choisi, identifier des besoins, concevoir une solution",
+          "Maquetter l’interface d’une application mobile iOS avec Figma",
+          "Développer une application mobile iOS (langage Swift et son framework SwiftUI)",
+          "Présentation synthétique d'un projet à l'oral devant un jury de professionnels",
         ],
       },
-    ]);
+    
+    ]
+  );
+
 
     // Mise à jour de la variable isMobile lorsqu'il y a un changement de taille d'écran
     const updateIsMobile = () => {
@@ -333,7 +318,7 @@ const Skill = () => {
           </div>
         </div>
       </section>
-
+      <h3>Expérience</h3>
       <ExperienceSection experienceData={experienceData} isMobile={isMobile} />
 
       <section>
