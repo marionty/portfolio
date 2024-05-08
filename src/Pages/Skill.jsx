@@ -322,7 +322,10 @@ const Skill = () => {
       <ExperienceSection experienceData={experienceData} isMobile={isMobile} />
 
       <section>
-        <h3>Education</h3>
+        <h3>
+          
+          Education
+          <img src="/images/avatarEducation.png" alt="Image" className="education-image" /></h3>
         <EducationSection
           educationData={educationData}
           setEducationData={setEducationData}

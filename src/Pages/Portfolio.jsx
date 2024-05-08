@@ -32,7 +32,7 @@ const Projects = () => {
       {
         name: "Projet: FitQuest",
         image: "../images/projetSwift1.png",
-        technologie: "ramework: SwiftUI",
+        technologie: "Framework: SwiftUI",
         description: "Une application mobile ios, sur le théme du sport, pour répondre à une problèmatique: 'Comment motiver les jeunes à faire plus de sport?', L'application FitQuest allie à la fois le sport, le social, et la gamification (récompenses). L'utilisateur, identifié par un avatar, accéde au 1er écran qui est une map, et visualise les lieux de sport accessibles dans sa locatisation, décide de faire du sport seul ou en groupe et de se défier au différents challenges proposés pour gagner des haltères (points) lui permettant de changer la tenue de son avatar.  " ,
         githubLink: "https://github.com/marionty/MyApplication",
       },

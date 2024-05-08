@@ -710,7 +710,7 @@ button.rocket-button img {
 .experience-date {
   margin-top: 10px;
   margin-bottom: 10px;
-  font-weight: bold;
+  
 }
 .image-title-container {
   display: flex;
@@ -778,7 +778,20 @@ button.rocket-button img {
   line-height: 1.5; /* Line height for better readability */
 }
 
+.close-overlay-button {
+  position: absolute;
+  top: 10px; /* Ajustez la position verticale selon vos besoins */
+  right: 10px; /* Ajustez la position horizontale selon vos besoins */
+  cursor: pointer;
+}
+
+
 /*education sur page educationSection*/
+.education-image{
+  width: 50px;
+   height: 60px;
+
+}
 .container {
   display: flex; /* Aligns the circles horizontally */
   justify-content: center; /* Centers the circles within the container */
