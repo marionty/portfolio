@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
 import {motion} from 'framer-motion'
 import "../Styles/Styles.css";
+import { useState } from 'react';
 
-const NavLinks =(props) => {
-  const animateFrom = {opacity: 0, y: -40}
-  const animateTo = {opacity: 1, y: -0} 
- 
+const NavLinks = (props) => {
+  const [isSubMenuOpen, setSubMenuOpen] = useState(false);
+  const animateFrom = { opacity: 0, y: -40 };
+  const animateTo = { opacity: 1, y: 0 };
+
+  const handlePortfolioClick = (e) => {
+    e.preventDefault();
+    setSubMenuOpen(!isSubMenuOpen);
+  };
     return (
 <ul className={`navItems ${props.isFooter ? 'footer-nav' : ''}`}>
         <motion.li
@@ -26,8 +32,21 @@ const NavLinks =(props) => {
         initial={animateFrom}
         animate={animateTo}
         transition={{delay: 0.25}}
-        onClick={() => props.isMobile && props.closeMobileMenu()}>
-       <Link to="/portfolio">Portfolio</Link>
+        onClick={handlePortfolioClick}>
+        <a href="#">Portfolio</a>
+        {isSubMenuOpen && (
+          <ul className="sub-menu">
+            <li>
+              <Link to="/Portfolio/ui-ux-designer">UI/UX Designer</Link>
+            </li>
+            <li>
+              <Link to="/Portfolio/web-development">Web Development</Link>
+            </li>
+            <li>
+              <Link to="/Portfolio/mobile-development">Mobile Development</Link>
+            </li>
+          </ul>
+        )}
         </motion.li>
         <motion.li
          initial={animateFrom}

@@ -9,6 +9,9 @@ import "./App.css";
 import Cursor from "./Components/Cursor";
 import { useState } from "react";
 import ScrollToTopOnPageChange from './Components/ScrollToTopOnPageChange';
+import UIUXDesigner from './Pages/UIUXDesigner';
+import WebDevelopment from './Pages/WebDevelopment';
+import MobileDevelopment from './Pages/MobileDevelopment';
 
 const App = () => {
   const [scaling, setscaling] = useState(false);
@@ -27,8 +30,10 @@ const App = () => {
             <Route exact path="/" element={<Home />} />
            
             <Route exact path="/Skills" element={<Skills  />} />
-         
-            <Route exact path="/Portfolio" element={<Portfolio />} />
+            
+            <Route path="Portfolio/ui-ux-designer" element={<UIUXDesigner />} />
+            <Route path="Portfolio/web-development" element={<WebDevelopment />} />
+            <Route path="Portfolio/mobile-development" element={<MobileDevelopment />} />
 
             <Route exact path="/Contact" element={<Contact />} />
             
