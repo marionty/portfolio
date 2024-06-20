@@ -1156,7 +1156,9 @@ h3 {
   left: 50%;
   transform: translateX(-50%);
 }
-
+.project-item-designer .svg-inline--fa {
+  padding-right: 0.5rem;
+}
 
 
 
