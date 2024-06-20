@@ -11,7 +11,7 @@ import 'swiper/swiper-bundle.css';
 import 'swiper/css/effect-coverflow';
 
 
-const Projects = () => {
+const WebDevelopment = () => {
   // État pour stocker les projets
   const [projets, setProjets] = useState([]); // Tableau de projets
 
@@ -29,20 +29,7 @@ const Projects = () => {
         description: "Création de mon portfolio, du maquettage au code, un enchainement d'animation en tout genre pour vous racontez mon aventure et ma reconversion dans le monde du développement web. N'hésitez pas à me donner vos avis et vos conseils via le formulaire de contact",
         githubLink: "https://github.com/marionty/portfolio",
       },
-      {
-        name: "Projet: FitQuest",
-        image: "../images/projetSwift1.png",
-        technologie: "Framework: SwiftUI",
-        description: "Une application mobile ios, sur le théme du sport, pour répondre à une problèmatique: 'Comment motiver les jeunes à faire plus de sport?', L'application FitQuest allie à la fois le sport, le social, et la gamification (récompenses). L'utilisateur, identifié par un avatar, accéde au 1er écran qui est une map, et visualise les lieux de sport accessibles dans sa locatisation, décide de faire du sport seul ou en groupe et de se défier au différents challenges proposés pour gagner des haltères (points) lui permettant de changer la tenue de son avatar.  " ,
-        githubLink: "https://github.com/marionty/MyApplication",
-      },
-      {
-        name: "Projet: Do It Your plan",
-        image: "../images/projetSwift2.png",
-        technologie: "Framework: SwiftUI",
-        description: "Une application mobile ios, sur le théme de la créativité, pour répondre à une problèmatique: 'Comment aider les adultes actifs à réaliser et aboutir leurs projets DIY', L'application Do it Your Plan permet aux utilisateurs de créer un projet DIY, étapes par étapes, à chaques étapes finalisées ils gagnent des points lui permettant de débloquer des accessoires pour son avatar, il peut accéder à sa liste de projets en cours, ainsi qu'à son planning pour sa gestion de début et de fin de projets et sa bibliothéques, ou il pourra répertorier toutes ses inspirations, vidéos. " ,
-       
-      },
+    
       {
         name: "Projet: La liane bleue",
         image: "../images/projetLalianebleue.png",
@@ -125,21 +112,21 @@ const Projects = () => {
   const breakpoints = {
     300: {
     slidesPerView: 1,
-    spaceBetween: 0,
+    spaceBetween: 16,
     navigation: false,
     },
     480: {
     slidesPerView: 1,
-    spaceBetween: 0,
+    spaceBetween: 16,
     navigation: false,
     },
     768: {
     slidesPerView: 2,
-    spaceBetween: 0,
+    spaceBetween: 24,
     },
     1440: {
     slidesPerView: 3,
-    spaceBetween: 0,
+    spaceBetween: 32,
     },
     };
   
@@ -157,7 +144,7 @@ const Projects = () => {
           <div className="object4"></div>
           <div className="object5"></div>
         </div>
-        <h3>My projects</h3>
+        <h3>My Web projects </h3>
         {/* Champ de recherche */}
         <div className="input-projects">
           <input
@@ -193,7 +180,7 @@ const Projects = () => {
       >
           {projetsFiltres.map((projet, index) => (
             <SwiperSlide key={index}>
-            <div className={`project-item ${index === 1 || index === 2 ? 'special-image' : ''}`}>
+            <div className="project-item">
             <div className="top-section">
               {/* Image du projet */}
       <img src={projet.image} alt="" />
@@ -226,5 +213,5 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default WebDevelopment;
 
